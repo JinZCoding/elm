@@ -10,125 +10,41 @@
                 </svg>
             </div>
             <div class="from_div">
-                <el-form ref="form" :model="form" :rules="rules">
+                <el-form ref="form" :model="form" label-width="80px">
                     <section class="info_sec">
-                        <el-form-item prop="phone">
-                            <el-input v-model.number="form.phone" placeholder="手机号"/>
-                        </el-form-item>
-
-                        <el-button :class="{'wrong_tel': !phoneOjdk}" :disabled="!phoneOjdk" class="get-code" type="text" @click="getCode">获取验证码</el-button>
+                        <el-input type="tel" v-model="form.tel" placeholder="手机号">
+                        </el-input>
+                        <el-button class="get-code wrong_tel" type="text">获取验证码</el-button>
                     </section>
                     <section class="info_sec">
-                        <el-form-item prop="code">
-                          <el-input v-model="form.code" placeholder="验证码"></el-input>
-                        </el-form-item>
+                        <el-input v-model="form.code" placeholder="验证码"></el-input>
                     </section>
                     <section class="mess_tips">
                         新用户登录即自动注册，并表示已同意<a href="javascript:;">《用户服务协议》</a>
                     </section>
-                    <button class="submitButton" :class="{'not_login': !not_login }" :disabled="!not_login" @click="mobileLogin">登录</button>
+                    <!-- <el-form-item>
+                        <el-button type="primary">登录</el-button>
+                    </el-form-item> -->
+                    <button class="submitButton">登录</button>
                 </el-form>
                 <a class="mess_us" href="javascript:;">关于我们</a>
             </div>
         </div>
+        <div><p>错误！</p></div>
         <div class="bottom_con">
             <p>&copy; jinzhiyi</p>
         </div>
-        <!-- <div class="error_tips" :class="{'hidden':show_err}">
-          <p>{{error_tips}}</p>
-        </div> -->
     </div>
 </template>
-
 <script>
 export default {
   data() {
-    var checkPhone = (rule, value, callback) => {
-      if (!value) {
-        // 登录按钮不能使用
-        this.not_login = false;
-        // this.error_tips = "手机号不能为空";
-        // this.show_err = false;
-        // return callback(new Error("手机号不能为空"));
-      } else {
-        const reg = /^1[3|4|5|7|8][0-9]\d{8}$/;
-        console.log(reg.test(value));
-        if (reg.test(value)) {
-          // 验证成功，获取验证码按钮变蓝
-          this.phoneOjdk = true;
-          callback();
-        } else {
-          this.phoneOjdk = false;
-          // 登录按钮不能使用
-          this.not_login = false;
-          // this.error_tips = "请输入正确的手机号";
-          // this.show_err = false;
-          // return callback(new Error("请输入正确的手机号"));
-        }
-      }
-    };
-    var checkCode = (rule, value, callback) => {
-      if (!value) {
-        // 登录按钮不能使用
-        this.not_login = false;
-        // return callback(new Error("验证码不能为空"));
-      } else {
-        // 验证验证码是否正确，暂时使用静态
-        if (value === this.code_num) {
-          this.codeOjdk = true;
-          // 只有手机号和验证码输入正确登录按钮才可以变亮
-          if (this.codeOjdk) {
-            this.not_login = true;
-          }
-          callback();
-        } else {
-          // 登录按钮不能使用
-          this.not_login = false;
-          // return callback(new Error("请输入正确的验证码"));
-        }
-      }
-    };
-
     return {
-      phoneOjdk: false, //手机号是否正确
-      codeOjdk: false,  //验证码是否正确
-      not_login: false, //
-      show_err: true,
-      code_num: "",
-      // error_tips:"",
       form: {
-        phone: "",
+        tel: "",
         code: ""
-      },
-      rules: {
-        phone: [{ validator: checkPhone, trigger: "change" }],
-        code: [{ validator: checkCode, trigger: "change" }]
       }
     };
-  },
-  // watch: {
-  //   form: {
-  //     code: function() {
-  //       console.log("waiting");
-  //     }
-  //   }
-  // },
-  methods: {
-    // 获取验证码,发送随机六位数
-    getCode() {
-      // console.log("hello");
-      var code_num = "";
-      for (let i = 0; i < 6; i++) {
-        code_num += Math.floor(Math.random() * 10);
-      }
-      this.code_num = code_num;
-      console.log(code_num);
-    },
-    // 登录
-    mobileLogin() {
-      console.log("登录成功!!!!");
-      this.$router.push("/profile");
-    }
   }
 };
 </script>
@@ -146,6 +62,7 @@ export default {
   align-items: center;
   & > div:first-child {
     flex: 1 1 auto;
+
   }
   & > div:first-child + div {
     flex: 0 0 2rem;
@@ -214,9 +131,6 @@ export default {
         font-size: 0.7rem;
         text-align: center;
         line-height: 1rem;
-        &.not_login {
-          background: #ccc;
-        }
       }
     }
     .mess_us {
@@ -236,20 +150,4 @@ export default {
   flex-direction: column;
   visibility: hidden;
 }
-// .error_tips {
-//   display: block;
-//   @include wh(10rem, 1.3rem);
-//   margin-bottom: 3rem;
-//   background: rgb(116, 112, 112);
-//   text-align: center;
-//   border-radius: 0.5rem;
-//   p {
-//     color: #fff;
-//     font-size: 0.6rem;
-//     line-height: 1.3rem;
-//   }
-// }
-// .hidden{
-//   display: none;
-// }
 </style>

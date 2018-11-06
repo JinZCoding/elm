@@ -258,6 +258,7 @@ export default {
         }
       } else {
         document.body.style.overflow = "hidden";
+        // 让导航栏跳至最上方
         this.$nextTick(() => {
           document.documentElement.scrollTop += 700;
         });
