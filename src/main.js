@@ -4,8 +4,10 @@ import routes from './router'
 import store from './store/'
 import './config/rem'
 
+import $ from 'jquery'
+
 import axios from 'axios'
-Vue.prototype.axios = axios;
+Vue.prototype.$axios = axios;
 
 //引入element-ui
 import ElementUI from 'element-ui'

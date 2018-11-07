@@ -10,41 +10,127 @@
                 </svg>
             </div>
             <div class="from_div">
-                <el-form ref="form" :model="form" label-width="80px">
+                <el-form ref="form" :model="form" :rules="rules">
                     <section class="info_sec">
-                        <el-input type="tel" v-model="form.tel" placeholder="手机号">
-                        </el-input>
-                        <el-button class="get-code wrong_tel" type="text">获取验证码</el-button>
+                        <el-form-item prop="phone">
+                            <el-input v-model.number="form.phone" placeholder="手机号"/>
+                        </el-form-item>
+
+                        <el-button :class="{'wrong_tel': !phoneOjdk}" :disabled="!phoneOjdk" class="get-code" type="text" @click="getCode">获取验证码</el-button>
                     </section>
                     <section class="info_sec">
-                        <el-input v-model="form.code" placeholder="验证码"></el-input>
+                        <el-form-item prop="code">
+                          <el-input v-model="form.code" placeholder="验证码"></el-input>
+                        </el-form-item>
                     </section>
                     <section class="mess_tips">
                         新用户登录即自动注册，并表示已同意<a href="javascript:;">《用户服务协议》</a>
                     </section>
-                    <!-- <el-form-item>
-                        <el-button type="primary">登录</el-button>
-                    </el-form-item> -->
-                    <button class="submitButton">登录</button>
+                    <!-- <button class="submitButton" :class="{'not_login': !not_login }" :disabled="!not_login" @click="mobileLogin">登录</button> -->
+                    <button class="submitButton" @click="mobileLogin">登录</button>
                 </el-form>
                 <a class="mess_us" href="javascript:;">关于我们</a>
             </div>
         </div>
-        <div><p>错误！</p></div>
         <div class="bottom_con">
             <p>&copy; jinzhiyi</p>
         </div>
+        <div id="err_tips" class="error_tips" :class="{'hidden':show_err}">
+          <p>{{error_tips}}</p>
+        </div>
     </div>
 </template>
+
 <script>
+import axios from "axios";
+
 export default {
   data() {
-    return {
-      form: {
-        tel: "",
-        code: ""
+    var checkPhone = (rule, value, callback) => {
+      if (!value) {
+        // return callback(new Error("手机号不能为空"));
+      } else {
+        const reg = /^1[3|4|5|7|8][0-9]\d{8}$/;
+        if (reg.test(value)) {
+          // 验证成功，获取验证码按钮变蓝
+          this.phoneOjdk = true;
+          callback();
+        } else {
+          this.phoneOjdk = false;
+          // return callback(new Error("请输入正确的手机号"));
+        }
       }
     };
+    var checkCode = (rule, value, callback) => {
+      if (!value) {
+        // return callback(new Error("验证码不能为空"));
+      } else {
+        // 验证验证码是否正确，(暂时使用静态)
+        if (value === this.code_num) {
+          this.codeOjdk = true;
+          callback();
+        } else {
+          // return callback(new Error("请输入正确的验证码"));
+        }
+      }
+    };
+
+    return {
+      phoneOjdk: false, //手机号是否正确
+      codeOjdk: false, //验证码是否正确
+      not_login: false, //
+      show_err: true,
+      code_num: "",
+      error_tips: "",
+      form: {
+        phone: "",
+        code: ""
+      },
+      rules: {
+        phone: [{ validator: checkPhone, trigger: "change" }],
+        code: [{ validator: checkCode, trigger: "change" }]
+      }
+    };
+  },
+  methods: {
+    // 获取验证码,发送随机六位数
+    getCode() {
+      var code_num = "";
+      for (let i = 0; i < 6; i++) {
+        code_num += Math.floor(Math.random() * 10);
+      }
+      this.code_num = code_num;
+      console.log(code_num);
+    },
+    // 登录
+    mobileLogin() {
+      // 每次点击登录按钮先清除按钮的style样式
+      $("#err_tips").removeAttr("style");
+      if (this.phoneOjdk && this.codeOjdk) {
+        console.log("登录成功!!!!");
+        this.$router.push("/profile");
+      } 
+      else {
+        if (!this.phoneOjdk) {
+          this.error_tips = "请输入正确的手机号!";
+          this.show_err = false;
+          setTimeout(function() {
+            this.show_err = true;
+            $("#err_tips").fadeOut("slow");
+            // console.log("show_err: ",this.show_err);
+          }, 2500);
+        } else if (!this.codeOjdk) {
+          this.error_tips = "验证码错误!";
+          this.show_err = false;
+          this.form.code = "";
+          setTimeout(function() {
+            this.show_err = true;
+            $("#err_tips").fadeOut("slow");
+            // console.log("show_err: ",this.show_err);
+          }, 2500);
+        }
+      }
+    }
   }
 };
 </script>
@@ -62,7 +148,6 @@ export default {
   align-items: center;
   & > div:first-child {
     flex: 1 1 auto;
-
   }
   & > div:first-child + div {
     flex: 0 0 2rem;
@@ -131,6 +216,9 @@ export default {
         font-size: 0.7rem;
         text-align: center;
         line-height: 1rem;
+        &.not_login {
+          background: #ccc;
+        }
       }
     }
     .mess_us {
@@ -149,5 +237,21 @@ export default {
   display: flex;
   flex-direction: column;
   visibility: hidden;
+}
+.error_tips {
+  display: block;
+  @include wh(10rem, 1.3rem);
+  margin-bottom: 3rem;
+  background: rgb(116, 112, 112);
+  text-align: center;
+  border-radius: 10rem;
+  p {
+    color: #fff;
+    font-size: 0.6rem;
+    line-height: 1.3rem;
+  }
+}
+.hidden {
+  display: none;
 }
 </style>

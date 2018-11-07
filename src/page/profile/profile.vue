@@ -5,8 +5,7 @@
           <section class="profile_number">
             <router-link to="/profile" class="profile_link">
               <!-- 头像 -->
-              <img :src="user.avatar" alt="" class="privateImage" v-if="userInfo&&userInfo.user._id">
-              <!-- <img src="" alt="" class="privateImage" v-else> -->
+              <img :src="user.avatar" alt="" class="privateImage" v-if="user.user_id">
               <span class="privateImage" v-else>
                 <svg class="privateImage-svg">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#avatar-default"></use>
@@ -14,7 +13,7 @@
               </span>
               <!-- 昵称 电话 -->
               <div class="user-info">
-                <p>{{user.name}}</p>
+                <p>{{user.username}}</p>
                 <p>
                   <span class="user-icon">
                     <svg class="icon-mobile" fill="#fff">
@@ -146,15 +145,26 @@
 import headerBar from "../../components/header/head";
 import footerBar from "../../components/footer/foot";
 import { mapState } from "vuex";
+
 export default {
   data() {
     return {
       user: {
-        name: "登录/注册",
+        username: "登录/注册",
         phone: "登录后享受更多特权",
         avatar: ""
       }
     };
+  },
+  mounted() {
+    this.$axios
+      .get("/static/json/userinfo.json")
+      .then(res => {
+        this.user = res.data;
+      })
+      .catch(err => {
+        console.log(err);
+      });
   },
   components: {
     headerBar,
@@ -167,7 +177,7 @@ export default {
 </script>
 <style lang="scss">
 @import "../../style/mixin";
-.cont{
+.cont {
   padding-bottom: 1.9rem;
 }
 .profile_number {
@@ -249,36 +259,36 @@ export default {
     }
   }
 }
-.profile_list{
-  margin-top: .4rem;
+.profile_list {
+  margin-top: 0.4rem;
   background: $fc;
-  .myorder{
+  .myorder {
     padding-left: 1.6rem;
     display: flex;
     align-items: center;
-    aside{
-      @include wh(.7rem, .7rem);
-      margin-left: -.866667rem;
-      margin-right: .266667rem;
+    aside {
+      @include wh(0.7rem, 0.7rem);
+      margin-left: -0.866667rem;
+      margin-right: 0.266667rem;
       display: flex;
       align-items: center;
-      svg{
+      svg {
         @include wh(100%, 100%);
       }
     }
-    .myorder-div{
+    .myorder-div {
       width: 100%;
       border-bottom: 1px solid #f1f1f1;
-      padding: .433333rem .266667rem .433333rem 0;
-      @include sc(.7rem, #333);
+      padding: 0.433333rem 0.266667rem 0.433333rem 0;
+      @include sc(0.7rem, #333);
       display: flex;
       justify-content: space-between;
-      span{
+      span {
         display: block;
       }
-      .myorder-divsvg{
-        @include wh(.46667rem, .46667rem);
-        svg{
+      .myorder-divsvg {
+        @include wh(0.46667rem, 0.46667rem);
+        svg {
           @include wh(100%, 100%);
         }
       }

@@ -62,7 +62,6 @@
     </div>
 </template>
 <script>
-import axios from "axios";
 import ratingStar from "./ratingStar";
 export default {
   data() {
@@ -80,19 +79,11 @@ export default {
     ratingStar
   },
   mounted() {
-    axios.get("/static/json/shoplist.json").then(res => {
+    this.$axios.get("/static/json/shoplist.json").then(res => {
       this.shopArr = res.data;
     });
   },
   methods: {
-    /*localdata() {
-      this.$axios.get("/static/localdata/shoplist.json").then(res => {
-        // this.shopArr = res.data;
-        console.log(res);
-        console.log(res.data);
-      });
-    },*/
-
     // 判断“准时达”
     zhunshi(supports) {
       let zhunStatus;
@@ -178,6 +169,8 @@ export default {
       @include fj(flex-start);
       .rating_section {
         display: flex;
+        // height: 1rem;
+        // line-height: 1rem;
         .star {
           @include sc(0.4rem, #ff6000);
           margin: 0 0.2rem;

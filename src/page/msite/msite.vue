@@ -379,6 +379,7 @@ export default {
 // .filter-extend{
 //   display: none;
 // }
+// 下拉框
 .filter-sort {
   display: none;
   background: #fff;
@@ -389,6 +390,7 @@ export default {
   padding: 0.3rem 0;
   left: 0;
   right: 0;
+  z-index: 5;
   ul {
     display: block;
     list-style: none;

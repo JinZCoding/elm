@@ -7,7 +7,13 @@ const search = r => require.ensure([], () => r(require('../page/search/search'))
 const profile = r => require.ensure([], () => r(require('../page/profile/profile')), 'profile')
 const order = r => require.ensure([], () => r(require('../page/order/order')), 'order')
 const login = r => require.ensure([], () => r(require('../page/login/login')), 'login')
-// const loginn = r => require.ensure([], () => r(require('../page/login/loginn')), 'loginn')
+
+
+
+
+
+// 测试页面
+const loginn = r => require.ensure([], () => r(require('../page/login/login.1')), 'login.1')
 
 export default [{
   path: '/',
@@ -58,10 +64,10 @@ export default [{
       path: '/login',
       component: login
     },
-    // {
-    //   path: '/loginn',
-    //   component: loginn
-    // }
+    {
+      path: '/loginn',
+      component: loginn
+    },
   ]
 
 }]
