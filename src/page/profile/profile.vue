@@ -149,19 +149,23 @@ import { mapState } from "vuex";
 export default {
   data() {
     return {
-        username: "登录/注册",
-        phone: "登录后享受更多特权",
-        avatar: ""
-    }
+      username: "登录/注册",
+      phone: "登录后享受更多特权",
+      avatar: ""
+    };
   },
   mounted() {
     // console.log(this.$route.params.phone)
     // "/static/json/userinfo.json/"+this.$route.query.phone
     //  https://cnodejs.org/api/v1/topics
-    if(this.$route.params.phone){
+
+    if (this.userInfo) {
+      this.username = this.userInfo.username;
+      this.phone = this.userInfo.phone;
+      this.avatar = this.userInfo.avatar;
+    } else if (this.$route.params.phone) {
       this.getData();
     }
-    
   },
   components: {
     headerBar,
@@ -170,23 +174,23 @@ export default {
   computed: {
     ...mapState(["userInfo"])
   },
-  methods:{
-    getData(){
+  methods: {
+    getData() {
       this.$axios
-      .get("/static/json/userinfo.json/")
-      .then(res => {
-        this.$store.state.userInfo = res.data;
-        // console.log(res.data);
-        // console.log(this.userInfo)
-        this.userInfo.phone = this.$route.params.phone
-        this.username = this.userInfo.username;
-        this.phone = this.userInfo.phone;
-        this.avatar = this.userInfo.avatar;
-        // console.log(res);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+        .get("/static/json/userinfo.json/")
+        .then(res => {
+          this.$store.state.userInfo = res.data;
+          // console.log(res.data);
+          // console.log(this.userInfo)
+          this.userInfo.phone = this.$route.params.phone;
+          this.username = this.userInfo.username;
+          this.phone = this.userInfo.phone;
+          this.avatar = this.userInfo.avatar;
+          // console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 };
