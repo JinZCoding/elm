@@ -33,15 +33,18 @@
           </section>
           <section class="main_info">
             <a href="javascript:;" class="info_items">
-              <img src="../../images/wallet.svg" alt="">
+              <span class="main_num" id="wallet" v-if="userInfo"><i>0.00</i>元</span>
+              <img src="../../images/wallet.svg" alt="" v-else>
               <span>钱包</span>
             </a>
             <a href="javascript:;" class="info_items">
-              <img src="../../images/red.svg" alt="">
+              <span class="main_num" id="bag" v-if="userInfo"><i>0.00</i>元</span>
+              <img src="../../images/red.svg" alt="" v-else>
               <span>红包</span>
             </a>
             <a href="javascript:;" class="info_items">
-              <img src="../../images/gold.svg" alt="">
+              <span class="main_num" id="gold" v-if="userInfo"><i>0.00</i>元</span>
+              <img src="../../images/gold.svg" alt="" v-else>
               <span>金币</span>
             </a>
           </section>
@@ -261,6 +264,31 @@ export default {
     width: 33.3333333%;
     vertical-align: middle;
     text-align: center;
+    .main_num {
+      i {
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+      &#wallet{
+        color: rgb(0, 152, 251);
+        i {
+          color: rgb(0, 152, 251);
+        }
+      }
+      &#bag{
+        color: rgb(255, 95, 62);
+        i {
+          color: rgb(255, 95, 62);
+        }
+      }
+      &#gold{
+        color: rgb(106, 194, 11);
+        i {
+          color: rgb(106, 194, 11);
+        }
+      }
+    }
+    
     img,
     span {
       display: block;

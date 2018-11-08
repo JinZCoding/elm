@@ -48,7 +48,6 @@ export default {
   data() {
     var checkPhone = (rule, value, callback) => {
       if (!value) {
-        this.phoneOjdk = false;
         // return callback(new Error("手机号不能为空"));
       } else {
         const reg = /^1[3|4|5|7|8][0-9]\d{8}$/;
@@ -94,10 +93,10 @@ export default {
       }
     };
   },
+
   methods: {
     // 获取验证码,发送随机六位数
     getCode() {
-
       var code_num = "";
       for (let i = 0; i < 6; i++) {
         code_num += Math.floor(Math.random() * 10);
@@ -110,8 +109,9 @@ export default {
       // 每次点击登录按钮先清除按钮的style样式
       $("#err_tips").removeAttr("style");
       if (this.phoneOjdk && this.codeOjdk) {
-        console.log("登录成功!!!!");
-        this.$router.push("/profile");
+        console.log("登录成功!!!!");        
+        // this.$router.push({path: "/profile", query:{ phone: this.form.phone}});
+        this.$router.push({name: "profile", params:{ phone: this.form.phone}});
       } 
       else {
         if (!this.phoneOjdk) {
@@ -134,7 +134,6 @@ export default {
         }
       }
     },
-    
   }
 };
 </script>
