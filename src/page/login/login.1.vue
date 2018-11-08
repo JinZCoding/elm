@@ -70,6 +70,7 @@ export default {
           this.codeOjdk = true;
           callback();
         } else {
+          this.codeOjdk = false;
           // return callback(new Error("请输入正确的验证码"));
         }
       }
@@ -92,6 +93,7 @@ export default {
       }
     };
   },
+
   methods: {
     // 获取验证码,发送随机六位数
     getCode() {
@@ -107,8 +109,9 @@ export default {
       // 每次点击登录按钮先清除按钮的style样式
       $("#err_tips").removeAttr("style");
       if (this.phoneOjdk && this.codeOjdk) {
-        console.log("登录成功!!!!");
-        this.$router.push("/profile");
+        console.log("登录成功!!!!");        
+        // this.$router.push({path: "/profile", query:{ phone: this.form.phone}});
+        this.$router.push({name: "profile", params:{ phone: this.form.phone}});
       } 
       else {
         if (!this.phoneOjdk) {
@@ -130,7 +133,7 @@ export default {
           }, 2500);
         }
       }
-    }
+    },
   }
 };
 </script>

@@ -55,6 +55,7 @@ export default [{
     },
     //我的
     {
+      name: 'profile',
       path: '/profile',
       meta: { title: "我的" },
       component: profile

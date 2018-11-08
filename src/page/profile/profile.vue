@@ -5,7 +5,7 @@
           <section class="profile_number">
             <router-link to="/profile" class="profile_link">
               <!-- 头像 -->
-              <img :src="user.avatar" alt="" class="privateImage" v-if="user.user_id">
+              <img :src="avatar" alt="" class="privateImage" v-if="userInfo">
               <span class="privateImage" v-else>
                 <svg class="privateImage-svg">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#avatar-default"></use>
@@ -13,14 +13,14 @@
               </span>
               <!-- 昵称 电话 -->
               <div class="user-info">
-                <p>{{user.username}}</p>
+                <p>{{username}}</p>
                 <p>
                   <span class="user-icon">
                     <svg class="icon-mobile" fill="#fff">
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mobile"></use>
                     </svg>
                   </span>
-                  <span class="mobile-number">{{user.phone}}</span>
+                  <span class="mobile-number">{{phone}}</span>
                 </p>
               </div>
               <!-- 箭头 -->
@@ -149,22 +149,19 @@ import { mapState } from "vuex";
 export default {
   data() {
     return {
-      user: {
         username: "登录/注册",
         phone: "登录后享受更多特权",
         avatar: ""
-      }
-    };
+    }
   },
   mounted() {
-    this.$axios
-      .get("/static/json/userinfo.json")
-      .then(res => {
-        this.user = res.data;
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    // console.log(this.$route.params.phone)
+    // "/static/json/userinfo.json/"+this.$route.query.phone
+    //  https://cnodejs.org/api/v1/topics
+    if(this.$route.params.phone){
+      this.getData();
+    }
+    
   },
   components: {
     headerBar,
@@ -172,6 +169,25 @@ export default {
   },
   computed: {
     ...mapState(["userInfo"])
+  },
+  methods:{
+    getData(){
+      this.$axios
+      .get("/static/json/userinfo.json/")
+      .then(res => {
+        this.$store.state.userInfo = res.data;
+        // console.log(res.data);
+        // console.log(this.userInfo)
+        this.userInfo.phone = this.$route.params.phone
+        this.username = this.userInfo.username;
+        this.phone = this.userInfo.phone;
+        this.avatar = this.userInfo.avatar;
+        // console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    }
   }
 };
 </script>

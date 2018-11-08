@@ -48,6 +48,7 @@ export default {
   data() {
     var checkPhone = (rule, value, callback) => {
       if (!value) {
+        this.phoneOjdk = false;
         // return callback(new Error("手机号不能为空"));
       } else {
         const reg = /^1[3|4|5|7|8][0-9]\d{8}$/;
@@ -70,6 +71,7 @@ export default {
           this.codeOjdk = true;
           callback();
         } else {
+          this.codeOjdk = false;
           // return callback(new Error("请输入正确的验证码"));
         }
       }
@@ -95,6 +97,7 @@ export default {
   methods: {
     // 获取验证码,发送随机六位数
     getCode() {
+
       var code_num = "";
       for (let i = 0; i < 6; i++) {
         code_num += Math.floor(Math.random() * 10);
@@ -130,7 +133,8 @@ export default {
           }, 2500);
         }
       }
-    }
+    },
+    
   }
 };
 </script>
