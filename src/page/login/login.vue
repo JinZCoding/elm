@@ -27,7 +27,8 @@
                         新用户登录即自动注册，并表示已同意<a href="javascript:;">《用户服务协议》</a>
                     </section>
                     <!-- <button class="submitButton" :class="{'not_login': !not_login }" :disabled="!not_login" @click="mobileLogin">登录</button> -->
-                    <button class="submitButton" @click="mobileLogin">登录</button>
+                    <button class="submitButton" @click.prevent="mobileLogin">登录</button>
+                    <!-- .prevent阻止事件冒泡  form表单的提交事件  -->
                 </el-form>
                 <a class="mess_us" href="javascript:;">关于我们</a>
             </div>

@@ -17,6 +17,7 @@ Vue.use(ElementUI)
 Vue.use(VueRouter)
 
 const router = new VueRouter({
+  mode: 'history',// 去掉url默认的锚点# 
   routes
 })
 

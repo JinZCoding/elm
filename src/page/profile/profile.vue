@@ -3,7 +3,7 @@
         <header-bar head-title="我的" goBack="true"></header-bar>
         <section class="cont">
           <section class="profile_number">
-            <router-link to="/profile" class="profile_link">
+            <router-link :to="userInfo?'/profile/info' : '/login'" class="profile_link">
               <!-- 头像 -->
               <img :src="avatar" alt="" class="privateImage" v-if="userInfo">
               <span class="privateImage" v-else>
@@ -33,17 +33,17 @@
           </section>
           <section class="main_info">
             <a href="javascript:;" class="info_items">
-              <span class="main_num" id="wallet" v-if="userInfo"><i>0.00</i>元</span>
+              <span class="main_num" id="wallet" v-if="userInfo"><i>{{parseInt(balance).toFixed(2)}}</i>元</span>
               <img src="../../images/wallet.svg" alt="" v-else>
               <span>钱包</span>
             </a>
             <a href="javascript:;" class="info_items">
-              <span class="main_num" id="bag" v-if="userInfo"><i>0.00</i>元</span>
+              <span class="main_num" id="bag" v-if="userInfo"><i>{{count}}</i>个</span>
               <img src="../../images/red.svg" alt="" v-else>
               <span>红包</span>
             </a>
             <a href="javascript:;" class="info_items">
-              <span class="main_num" id="gold" v-if="userInfo"><i>0.00</i>元</span>
+              <span class="main_num" id="gold" v-if="userInfo"><i>{{pointNumber}}</i>个</span>
               <img src="../../images/gold.svg" alt="" v-else>
               <span>金币</span>
             </a>
@@ -142,6 +142,11 @@
         </section>
 
         <footer-bar></footer-bar>
+
+        <transition name="router-slid" mode="out-in">
+          <router-view></router-view>
+        </transition>
+
     </div>
 </template>
 <script>
@@ -154,7 +159,10 @@ export default {
     return {
       username: "登录/注册",
       phone: "登录后享受更多特权",
-      avatar: ""
+      avatar: "",
+      balance: 0,
+      count: 0,
+      pointNumber: 0
     };
   },
   mounted() {
@@ -166,6 +174,9 @@ export default {
       this.username = this.userInfo.username;
       this.phone = this.userInfo.phone;
       this.avatar = this.userInfo.avatar;
+      this.balance = this.userInfo.balance;
+      this.count = this.userInfo.gift_amount;
+      this.pointNumber = this.userInfo.point;
     } else if (this.$route.params.phone) {
       this.getData();
     }
@@ -189,6 +200,9 @@ export default {
           this.username = this.userInfo.username;
           this.phone = this.userInfo.phone;
           this.avatar = this.userInfo.avatar;
+          this.balance = this.userInfo.balance;
+          this.count = this.userInfo.gift_amount;
+          this.pointNumber = this.userInfo.point;
           // console.log(res);
         })
         .catch(err => {
@@ -269,26 +283,26 @@ export default {
         font-size: 1.2rem;
         font-weight: 700;
       }
-      &#wallet{
+      &#wallet {
         color: rgb(0, 152, 251);
         i {
           color: rgb(0, 152, 251);
         }
       }
-      &#bag{
+      &#bag {
         color: rgb(255, 95, 62);
         i {
           color: rgb(255, 95, 62);
         }
       }
-      &#gold{
+      &#gold {
         color: rgb(106, 194, 11);
         i {
           color: rgb(106, 194, 11);
         }
       }
     }
-    
+
     img,
     span {
       display: block;
@@ -342,5 +356,13 @@ export default {
       }
     }
   }
+}
+
+.router-slid-enter-active, .router-slid-leave-active {
+    transition: all .6s;
+}
+.router-slid-enter, .router-slid-leave-active {
+    transform: translate3d(2rem, 0, 0);
+    opacity: 0;
 }
 </style>
