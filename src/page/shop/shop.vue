@@ -27,15 +27,17 @@
                     <div class="shop_discount shop_width">
                         <div class="dis_left">
                             <div>
-                                <span class="first_tips shop_tips mini_tips">
+                                <span class="first_tips mini_tips">
                                     <span>首单</span>
                                 </span>
                                 <span>新用户下单立减17元(不与其它活动同享)</span>
                             </div>
                         </div>
-                        <div class="dis_right"></div>
+                        <div class="dis_right">13个优惠</div>
                     </div>
-                    <div class="shop_info">公告：餐厅电话：111111111111</div>
+                    <p class="shop_info shop_width">
+                        公告：餐厅电话：111111111111
+                    </p>
                 </div>
             </div>
         </div>
@@ -189,10 +191,39 @@ export default {
           & > div {
             align-items: center;
             .first_tips {
-                background-color: rgb(112, 188, 70);
+              display: inline-block;
+              border-radius: 0.1rem;
+              background-color: rgb(112, 188, 70);
+              @include wh(1rem, 0.6rem);
+              span {
+                @include sc(0.3334rem, #fff);
+              }
             }
           }
         }
+        .dis_right {
+          color: #999;
+          position: relative;
+          &::after{
+              position: absolute;
+              content: "";
+              display: block;
+              border-style: solid;
+              margin-left: 0.2rem;
+              border-width:0.24rem 0.1666rem 0 0.1666rem ;
+              border-color: #999 transparent transparent transparent;
+              top: 50%;
+              transform: translateY(-50%);
+          }
+        }
+      }
+      .shop_info {
+        color: #999;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0.326667rem auto 0.366667rem;
+        padding: 0;
+        white-space: nowrap;
       }
     }
   }
@@ -219,6 +250,7 @@ export default {
   @include wh(1rem, 0.7rem);
 }
 .mini_tips {
+  position: relative;
   font-size: 0.3333rem;
   color: transparent;
   white-space: nowrap;
