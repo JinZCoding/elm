@@ -1,10 +1,11 @@
 <template>
     <div>
         <!-- <header-bar head-title="我的" goBack="true"></header-bar> -->
+        <!-- 商家信息 -->
         <div class="shop_head">
             <div class="header">
                 <nav class="header_all">
-                    <a href="javascript:;" class="goback"></a>
+                    <a href="javascript:;" class="goback" @click="goback"></a>
                 </nav>
                 <div class="header_title">
                     <div class="shop_img">
@@ -33,22 +34,125 @@
                                 <span>新用户下单立减17元(不与其它活动同享)</span>
                             </div>
                         </div>
-                        <div class="dis_right">13个优惠</div>
+                        <div class="dis_right" @click="show_dis">13个优惠</div>
                     </div>
                     <p class="shop_info shop_width">
-                        公告：餐厅电话：111111111111
+                        公告：餐厅电话：18519344565，010-64844461。尊敬的顾客，欢迎光临金百万丝竹园店，因餐厅用餐高峰10:30-13:00 饭点较忙，为避免耽误您就餐时间，烦请您收藏店铺并提前下单，另外，请您确保电话畅通，以便送餐员能及时联系您，感谢理解。
+                        温馨提示：营业时间09:00-21:00.
                     </p>
                 </div>
+
+            </div>
+            <div class="discount_info" v-if="show_discount">
+              <div class="info_box">
+                <h2>优惠活动</h2>
+                <div class="info_ul">
+                  <ul>
+                    <li>
+                      <span class="first_tips mini_tips">首单</span>
+                      <span>新用户下单立减17元(不与其它活动同享)</span>
+                    </li>
+                    <li>
+                      <span class="first_tips mini_tips">满减</span>
+                      <span>满30减15，满60减30，满100减50，满150减65</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="info_close" @click="show_discount = false">
+                  <svg width="100%" height="100%" class="close_activities">
+                    <line x1="0" y1="20" x2="20" y2="0" style="stroke:#999;stroke-width:2"/>
+                    <line x1="0" y1="0" x2="20" y2="20" style="stroke:#999;stroke-width:2"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="info_filter" @click="show_discount = false"></div>
             </div>
         </div>
+        <!-- 头部导航 -->
+        <div class="shop_tab" style="position: sticky; top: 0; z-index: 55;">
+            <div class="tab_item">
+              <p class="tab_tit">点餐
+                <span class="bot_line"></span>
+              </p>
+              </div>
+            <div class="tab_item">
+              <p>评价
+                <span></span>
+              </p>
+              </div>
+            <div class="tab_item">
+              <p>商家
+                <span></span>
+              </p>
+              </div>
+        </div>
+        <!-- 左右菜单 -->
+        <div class="order">
+          <div class="menu_left">
+            <ul>
+              <li v-for="(item, key) in menuList" :key="key">{{item.name}}</li>
+            </ul>
+          </div>
+          <div class="menu_right">
+            <div class="menu">
+              <dl v-for="(item, key) in menuList" :key="key">
+                <dt>
+                  <div class="menu_des">
+                    <strong>{{item.name}}</strong>
+                    <span>{{item.description}}</span>
+                  </div>
+                </dt>
+                <dd v-for="(item, key) in item.foods" :key="key">
+                  <div class="food_root">
+                    <span class="food_img">
+                      <img src="../../images/naicha.jpeg" alt="">
+                      <!-- <img :src="item.image_path" alt=""> -->
+                    </span>
+                    <div class="food_detail">
+                      <p class="food_name">
+                        <span class="nameText">{{item.name}}</span>
+                      </p>
+                      <p class="food_desc">{{item.description}}</p>
+                      <p class="food_sales"><span>月售{{item.month_sales}}份</span><span>好评{{item.satisfy_rate}}%</span></p>
+                      <p class="food_discount"></p>
+                      <span class="food_pri">
+                        <span>{{item.specfoods[0].price}}</span>
+                        <del v-if="item.specfoods[0].original_price">￥{{item.specfoods[0].original_price}}</del>
+                      </span>
+                      <div class="food_add">
+                        <span>
+                          <svg>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-add"></use>
+                          </svg>
+                        </span>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <!-- 购物车 -->
+        <div class="cart">
+          <div class="shopcart">
+            <div class="cart_left nofoods">
+              <div class="cart_icon">
+              </div>
+            </div>
+            <div class="cart_middle foods_pri">
+              <p class="foods_price">
+                <span class="foods_total" v-if="totalPrice">{{totalPrice}}</span>
+                <span class="no_food middle_font" v-else>未选购商品</span>
+              </p>
+              <p class="food_deliver middle_font">另需配送费{{deliveryFee}}元</p>
+            </div>
+            <a role="button" href="javascript:;" class="cart_right ">
 
-        
-        <div class="shop_menu">
-            <!-- <el-tabs :tab-position="tabPosition" >
-                <el-tab-pane label="用户管理">用户管理</el-tab-pane>
-                <el-tab-pane label="配置管理">配置管理</el-tab-pane>
-                <el-tab-pane label="角色管理">角色管理</el-tab-pane>
-            </el-tabs> -->
+              <span class="total_pri">￥{{minimumOrderAmount}}起送</span>
+            </a>
+          </div>
         </div>
     </div>
 </template>
@@ -59,7 +163,14 @@ import footerBar from "../../components/footer/foot";
 export default {
   data() {
     return {
-      //   tabPosition: "top"
+      show_discount: false,
+      menuList: [],         //食品列表
+      shopDetailData: null, //商铺详情
+      totalNum: 0,//总个数
+      totalPrice: 0, //总共价格
+      cartFoodList: [], //购物车商品列表
+      showCartList: false,//显示购物车列表
+
       // geohash:'',
       // shopId: null,//商店id
       // showLoading: true, // 显示加载动画
@@ -71,13 +182,45 @@ export default {
     footerBar
   },
   mounted() {
-    this.$axios.get("/static/json/shop.json/").then(res => {
-      console.log(res.data);
-    });
+    this.getData();
+  },
+  computed:{
+    // 配送费
+    deliveryFee: function () {
+      if (this.shopDetailData) {
+        return this.shopDetailData.float_delivery_fee;
+      }else{
+        return null;
+      }
+    },
+    // 起送价
+    minimumOrderAmount:function(){
+      if (this.shopDetailData) {
+        return this.shopDetailData.float_minimum_order_amount;
+      }else{
+        return null;
+      }
+    },
+
   },
   methods: {
+    getData(){
+      this.$axios.get("/static/json/shop.json/").then(res => {
+        // console.log(res.data);
+        // console.log(res.data.menu);
+        this.menuList = res.data.menu;
+        this.shopDetailData = res.data.rst;
+
+      });
+    },
+    // totalNum(){
+
+    // },
     goback() {
       this.$router.go(-1);
+    },
+    show_dis() {
+      this.show_discount = true;
     }
   }
 };
@@ -190,30 +333,23 @@ export default {
           overflow: hidden;
           & > div {
             align-items: center;
-            .first_tips {
-              display: inline-block;
-              border-radius: 0.1rem;
-              background-color: rgb(112, 188, 70);
-              @include wh(1rem, 0.6rem);
-              span {
-                @include sc(0.3334rem, #fff);
-              }
-            }
           }
         }
         .dis_right {
           color: #999;
           position: relative;
-          &::after{
-              position: absolute;
-              content: "";
-              display: block;
-              border-style: solid;
-              margin-left: 0.2rem;
-              border-width:0.24rem 0.1666rem 0 0.1666rem ;
-              border-color: #999 transparent transparent transparent;
-              top: 50%;
-              transform: translateY(-50%);
+          width: 2.422rem;
+          &::after {
+            position: absolute;
+            content: "";
+            display: block;
+            border-style: solid;
+            margin-left: 0.2rem;
+            border-width: 0.24rem 0.1666rem 0 0.1666rem;
+            border-color: #999 transparent transparent transparent;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
           }
         }
       }
@@ -227,6 +363,306 @@ export default {
       }
     }
   }
+  .discount_info {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    .info_box {
+      position: absolute;
+      background-color: #f5f5f5;
+      box-shadow: 0 -1px 5px 0 rgba(0, 0, 0, 0.4);
+      z-index: 100;
+      bottom: 0;
+      @include wh(100%, 10.8888rem);
+      box-sizing: border-box;
+      padding: 0.7rem 1.1rem;
+      font-size: 0.55rem;
+      h2 {
+        font-size: 0.788rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 0.34rem;
+      }
+      .info_ul {
+        height: 7.8rem;
+        overflow: scroll;
+        ul > li {
+          margin-bottom: 0.45rem;
+        }
+      }
+      .info_close {
+        position: absolute;
+        @include wh(1.3rem, 1.3rem);
+        right: 0.2rem;
+        top: 0.32rem;
+      }
+    }
+    .info_filter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+.shop_tab {
+  display: flex;
+  @include wh(100%, 2rem);
+  background: #fff;
+  line-height: 2rem;
+  font-size: 0.74rem;
+  // font-size: 700;
+  & > .tab_item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    color: #666;
+    border-bottom: 1px solid #ebebeb;
+    // 选中下划线样式
+    .tab_tit {
+      display: inline-block;
+      position: relative;
+      span {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 0.111rem;
+        background-color: #2395ff;
+      }
+    }
+  }
+}
+.order {
+  padding-bottom: 2.5rem;
+  display: flex;
+  height: 100%;
+  .menu_left {
+    // flex: 1;
+    overflow-y: auto;
+    @include wh(3.5rem, 100%);
+    min-width: 3.4333rem;
+    background-color: #f8f8f8;
+    overflow: scroll;
+    ul {
+      position: relative;
+      flex: none;
+      z-index: 0;
+      li {
+        position: relative;
+        padding: 0.75rem 0.35rem;
+        font-size: 0.56rem;
+        color: #666;
+      }
+    }
+  }
+  .menu_right {
+    position: relative;
+    height: 100%;
+    // width: 12.4rem;
+    flex: 1;
+    background: #fff;
+  }
+}
+.menu {
+  height: 100%;
+  overflow-y: auto;
+  dl > dt {
+    position: relative;
+    margin-left: 0.2rem;
+    padding: 0.2rem 0.3rem;
+    .menu_des {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      strong {
+        font-weight: 700;
+        font-size: 0.54rem;
+        color: #666;
+        flex: none;
+        margin-right: 0.4rem;
+      }
+      span {
+        flex: 1;
+        color: #999;
+        font-size: 0.266667rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+  dl > dd {
+    position: relative;
+    margin: 0;
+    min-height: 4.3rem;
+    padding-left: 0.5rem;
+    & > div {
+      padding: 0.3rem 0;
+      margin-bottom: 0.02rem;
+      display: flex;
+      position: relative;
+      min-height: 4.3rem;
+    }
+    .food_img {
+      @include wh(4.3rem, 4.3rem);
+      flex: none;
+      position: relative;
+      margin-right: 0.3rem;
+      img {
+        @include wh(100%, 100%);
+      }
+    }
+    .food_detail {
+      flex: 1;
+      position: relative;
+      padding-bottom: 1.2rem;
+      padding-right: 0.7999rem;
+      .food_name {
+        position: relative;
+        padding-right: 0.5rem;
+        display: flex;
+        align-items: start;
+        .nameText {
+          font-size: 0.7rem;
+          font-weight: 700;
+          overflow: hidden;
+          width: 6.5rem;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+      .food_desc {
+        margin: 0.1rem 0;
+        font-size: 0.5rem;
+        color: #999;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 7.2rem;
+      }
+      .food_sales {
+        width: 7rem;
+        font-size: 0.5rem;
+        color: #999;
+        span {
+          vertical-align: middle;
+        }
+        & > span:not(:first-child) {
+          margin-left: 0.2rem;
+        }
+      }
+      .food_pri {
+        position: absolute;
+        bottom: 0;
+        font-size: 0.65rem;
+        width: 4.3rem;
+
+        span {
+          color: rgb(255, 83, 57);
+        }
+        &:before {
+          content: "￥";
+          color: rgb(255, 83, 57);
+        }
+        del {
+          font-size: 0.5rem;
+          color: #999;
+          margin-left: 0.04rem;
+        }
+      }
+      .food_add {
+        position: absolute;
+        right: 0.9rem;
+        bottom: 0;
+        @include wh(0.9rem, 0.9rem);
+        display: flex;
+        span {
+          &.select_num {
+            font-size: 0.67rem;
+            line-height: 0.9rem;
+            color: #666;
+            vertical-align: middle;
+          }
+        }
+        svg {
+          @include wh(100%, 100%);
+          fill: #2395ff;
+        }
+      }
+    }
+  }
+}
+.cart {
+  font-size: 0.5rem;
+  @include wh(100%, 2.3rem);
+  background: #ccc;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  .shopcart {
+    @include wh(100%, 2.3rem);
+    display: flex;
+    align-items: center;
+    padding-left: 3.7rem;
+    background-color: rgba(61, 61, 63, 0.9);
+    .cart_left {
+      position: absolute;
+      @include wh(2.4rem, 2.4rem);
+      left: 0.4rem;
+      bottom: 0.244rem;
+      box-sizing: border-box;
+      border-radius: 100%;
+      background-color: #3190e8;
+      border: 0.2rem solid #444;
+      box-shadow: 0 -0.1rem 0.133333rem 0 rgba(0, 0, 0, 0.1);
+      will-change: transform;
+      &.nofoods {
+        background-image: radial-gradient(circle, #363636 6.266667rem, #444 0);
+      }
+      &:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url(../../images/cart.svg) 50% no-repeat;
+        background-size: 0.6rem;
+        background-size: 6vw;
+        content: "";
+      }
+    }
+    .cart_middle {
+      flex: 1;
+      .foods_total{
+        font-size: 0.75rem;
+        color:#fff;
+      }
+    }
+    .cart_right{
+      background-color: #535356;
+      @include wh(5rem, 100%);
+      text-decoration: none;
+      text-align: center;
+      line-height: 2.3rem;
+      span{
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #fff;
+      }
+    }
+  }
+}
+.middle_font {
+  font-size: 0.7em;
+  color: #999;
 }
 .shop_width {
   width: 12.455rem;
@@ -249,10 +685,19 @@ export default {
   background-image: linear-gradient(90deg, #fff100, #ffe339);
   @include wh(1rem, 0.7rem);
 }
+.first_tips {
+  display: inline-block;
+  border-radius: 0.1rem;
+  background-color: rgb(112, 188, 70);
+  @include wh(1rem, 0.6rem);
+  span {
+    @include sc(0.3334rem, #fff);
+  }
+}
 .mini_tips {
   position: relative;
   font-size: 0.3333rem;
-  color: transparent;
+  color: #fff;
   white-space: nowrap;
 }
 // .shop_menu{

@@ -1,0 +1,103 @@
+[
+    {
+        "name": "热销榜",
+        "description": "大家喜欢吃，才叫真好吃。",
+        "id": 2406,
+        "restaurant_id": 2446,
+        "foods": [
+            {
+                "_id": "5be2edd25e0b366c52bb04ff",
+                "tips": "111评价 月售513份",
+                "item_id": 1488,
+                "category_id": 2406,
+                "restaurant_id": 2446,
+                "activity": null,
+                "image_path": "166ee7088ed21053.jpg",
+                "name": "测试",
+                "__v": 0,
+                "specfoods": [
+                    {
+                        "specs_name": "默认",
+                        "name": "测试",
+                        "item_id": 1488,
+                        "sku_id": 5356,
+                        "food_id": 5356,
+                        "restaurant_id": 2446,
+                        "_id": "5be2fada5e0b366c52bb0565",
+                        "specs": [
+                            {
+                                "name": "规格",
+                                "value": "默认",
+                                "_id": "5be2fada5e0b366c52bb0566"
+                            }
+                        ],
+                        "stock": 1000,
+                        "checkout_mode": 1,
+                        "is_essential": false,
+                        "recent_popularity": 200,
+                        "sold_out": false,
+                        "price": 20,
+                        "promotion_stock": -1,
+                        "recent_rating": 4.3,
+                        "packing_fee": 0,
+                        "pinyin_name": "",
+                        "original_price": 0
+                    },
+                    {
+                        "specs_name": "大份",
+                        "name": "测试",
+                        "item_id": 1488,
+                        "sku_id": 5357,
+                        "food_id": 5357,
+                        "restaurant_id": 2446,
+                        "_id": "5be2fada5e0b366c52bb0563",
+                        "specs": [
+                            {
+                                "name": "规格",
+                                "value": "大份",
+                                "_id": "5be2fada5e0b366c52bb0564"
+                            }
+                        ],
+                        "stock": 1000,
+                        "checkout_mode": 1,
+                        "is_essential": false,
+                        "recent_popularity": 737,
+                        "sold_out": false,
+                        "price": 26,
+                        "promotion_stock": -1,
+                        "recent_rating": 4,
+                        "packing_fee": 0,
+                        "pinyin_name": "",
+                        "original_price": 0
+                    }
+                ],
+                "satisfy_rate": 65,
+                "satisfy_count": 609,
+                "attributes": [],
+                "is_essential": false,
+                "server_utc": "2018-11-06T12:40:48.687Z",
+                "specifications": [
+                    {
+                        "values": [
+                            "默认",
+                            "大份"
+                        ],
+                        "name": "规格"
+                    }
+                ],
+                "rating_count": 111,
+                "month_sales": 513,
+                "description": "哈哈哈",
+                "attrs": [],
+                "display_times": [],
+                "pinyin_name": "",
+                "is_featured": 0,
+                "rating": 4.1
+            }
+        ],
+        "type": 1,
+        "icon_url": "5da3872d782f707b4c82ce4607c73d1ajpeg",
+        "is_selected": true,
+        "__v": 2
+    }
+]
