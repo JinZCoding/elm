@@ -4,41 +4,41 @@
         <!-- 商家信息 -->
         <div class="shop_head">
             <div class="header">
-                <nav class="header_all">
+                <nav class="header_all" :style="{backgroundImage: 'url('+shopDetailData.image_path+')'}">
                     <a href="javascript:;" class="goback" @click="goback"></a>
                 </nav>
                 <div class="header_title">
                     <div class="shop_img">
-                        <span class="shop_tips mini_tips">
+                        <span class="shop_tips mini_tips" >
                             <span>品牌</span>
                         </span>
-                        <img src="../../images/title.png" alt="">
+                        <img :src="shopDetailData.image_path" alt="">
+                        <!-- <img src="../../images/coco.jpeg" alt=""> -->
                     </div>
                     <div class="shop_title">
                         <h2 class="tit">
-                            <span>金百万烤鸭（丝竹园店）</span>
+                            <span>{{shopDetailData.name}}</span>
                             <i></i>
                         </h2>
                         <div class="shop_detail">
-                            <span class="det_tips">评价4.5</span>
-                            <span class="det_tips">月售3309单</span>
-                            <span class="det_tips">蜂鸟快送约33分钟</span>
+                            <span class="det_tips">评价{{shopDetailData.rating}}</span>
+                            <span class="det_tips">月售{{shopDetailData.recent_order_num}}单</span>
+                            <span class="det_tips">蜂鸟快送约{{shopDetailData.order_lead_time}}分钟</span>
                         </div>
                     </div>
-                    <div class="shop_discount shop_width">
+                    <div class="shop_discount shop_width"  v-if="shopDetailData.activities">
                         <div class="dis_left">
                             <div>
                                 <span class="first_tips mini_tips">
-                                    <span>首单</span>
+                                    <span>{{shopDetailData.activities[0].icon_name}}</span>
                                 </span>
-                                <span>新用户下单立减17元(不与其它活动同享)</span>
+                                <span>{{shopDetailData.activities[0].description}}</span>
                             </div>
                         </div>
-                        <div class="dis_right" @click="show_dis">13个优惠</div>
+                        <div class="dis_right" @click="show_dis">{{shopDetailData.activities.length}}个优惠</div>
                     </div>
                     <p class="shop_info shop_width">
-                        公告：餐厅电话：18519344565，010-64844461。尊敬的顾客，欢迎光临金百万丝竹园店，因餐厅用餐高峰10:30-13:00 饭点较忙，为避免耽误您就餐时间，烦请您收藏店铺并提前下单，另外，请您确保电话畅通，以便送餐员能及时联系您，感谢理解。
-                        温馨提示：营业时间09:00-21:00.
+                        公告：{{promotionInfo}}
                     </p>
                 </div>
 
@@ -48,13 +48,9 @@
                 <h2>优惠活动</h2>
                 <div class="info_ul">
                   <ul>
-                    <li>
-                      <span class="first_tips mini_tips">首单</span>
-                      <span>新用户下单立减17元(不与其它活动同享)</span>
-                    </li>
-                    <li>
-                      <span class="first_tips mini_tips">满减</span>
-                      <span>满30减15，满60减30，满100减50，满150减65</span>
+                    <li v-for="item in shopDetailData.activities" :key="item.id">
+                      <span class="first_tips mini_tips" :style="{backgroundColor: '#' + item.icon_color}">{{item.icon_name}}</span>
+                      <span>{{item.description}}</span>
                     </li>
                   </ul>
                 </div>
@@ -87,7 +83,7 @@
               </div>
         </div>
         <!-- 左右菜单 -->
-        <div class="order">
+        <div class="order" style="display:none;">
           <div class="menu_left">
             <ul>
               <li v-for="(item, key) in menuList" :key="key">{{item.name}}</li>
@@ -95,18 +91,18 @@
           </div>
           <div class="menu_right">
             <div class="menu">
-              <dl v-for="(item, key) in menuList" :key="key">
+              <dl v-for="item in menuList" :key="item.id">
                 <dt>
                   <div class="menu_des">
                     <strong>{{item.name}}</strong>
                     <span>{{item.description}}</span>
                   </div>
                 </dt>
-                <dd v-for="(item, key) in item.foods" :key="key">
+                <dd v-for="item in item.foods" :key="item.id">
                   <div class="food_root">
                     <span class="food_img">
+                      <!-- img -->
                       <img src="../../images/naicha.jpeg" alt="">
-                      <!-- <img :src="item.image_path" alt=""> -->
                     </span>
                     <div class="food_detail">
                       <p class="food_name">
@@ -133,27 +129,39 @@
               </dl>
             </div>
           </div>
-        </div>
-        <!-- 购物车 -->
-        <div class="cart">
-          <div class="shopcart">
-            <div class="cart_left nofoods">
-              <div class="cart_icon">
+          <!-- 购物车 -->
+          <div class="cart">
+            <div class="shopcart">
+              <div class="cart_left nofoods">
+                <div class="cart_icon">
+                </div>
               </div>
-            </div>
-            <div class="cart_middle foods_pri">
-              <p class="foods_price">
-                <span class="foods_total" v-if="totalPrice">{{totalPrice}}</span>
-                <span class="no_food middle_font" v-else>未选购商品</span>
-              </p>
-              <p class="food_deliver middle_font">另需配送费{{deliveryFee}}元</p>
-            </div>
-            <a role="button" href="javascript:;" class="cart_right ">
+              <div class="cart_middle foods_pri">
+                <p class="foods_price">
+                  <span class="foods_total" v-if="totalPrice">{{totalPrice}}</span>
+                  <span class="no_food middle_font" v-else>未选购商品</span>
+                </p>
+                <p class="food_deliver middle_font">另需配送费{{deliveryFee}}元</p>
+              </div>
+              <a role="button" href="javascript:;" class="cart_right ">
 
-              <span class="total_pri">￥{{minimumOrderAmount}}起送</span>
-            </a>
+                <span class="total_pri">￥{{minimumOrderAmount}}起送</span>
+              </a>
+            </div>
           </div>
         </div>
+        <!-- 评价 -->
+        <div class="evaluate">
+          <div class="shop_rating">
+
+          </div>
+          <div class="shop_eval">
+
+          </div>
+        </div>
+        <!-- 商家 -->
+
+
     </div>
 </template>
 <script>
@@ -164,12 +172,12 @@ export default {
   data() {
     return {
       show_discount: false,
-      menuList: [],         //食品列表
-      shopDetailData: null, //商铺详情
-      totalNum: 0,//总个数
+      menuList: [], //食品列表
+      shopDetailData: {}, //商铺详情
+      totalNum: 0, //总个数
       totalPrice: 0, //总共价格
       cartFoodList: [], //购物车商品列表
-      showCartList: false,//显示购物车列表
+      showCartList: false //显示购物车列表
 
       // geohash:'',
       // shopId: null,//商店id
@@ -182,40 +190,42 @@ export default {
     footerBar
   },
   mounted() {
-    this.getData();
+    this.initData();
   },
-  computed:{
+  computed: {
+    // 公告
+    promotionInfo: function() {
+      return (
+        this.shopDetailData.promotion_info || "欢迎光临，用餐高峰期请提前下单，谢谢。"
+      );
+    },
     // 配送费
-    deliveryFee: function () {
+    deliveryFee: function() {
       if (this.shopDetailData) {
         return this.shopDetailData.float_delivery_fee;
-      }else{
+      } else {
         return null;
       }
     },
     // 起送价
-    minimumOrderAmount:function(){
+    minimumOrderAmount: function() {
       if (this.shopDetailData) {
         return this.shopDetailData.float_minimum_order_amount;
-      }else{
+      } else {
         return null;
       }
-    },
-
+    }
   },
   methods: {
-    getData(){
+    initData() {
       this.$axios.get("/static/json/shop.json/").then(res => {
         // console.log(res.data);
-        // console.log(res.data.menu);
+        // console.log(res.data.rst);
         this.menuList = res.data.menu;
         this.shopDetailData = res.data.rst;
-
       });
     },
-    // totalNum(){
-
-    // },
+    // totalNum(){},
     goback() {
       this.$router.go(-1);
     },
@@ -302,6 +312,7 @@ export default {
           i {
             position: relative;
             @include wh(0.68rem, 0.5222rem);
+            margin-left: 0.2rem;
             &:after {
               content: "";
               position: absolute;
@@ -447,7 +458,7 @@ export default {
     // flex: 1;
     overflow-y: auto;
     @include wh(3.5rem, 100%);
-    min-width: 3.4333rem;
+    // min-width: 3.4333rem;
     background-color: #f8f8f8;
     overflow: scroll;
     ul {
@@ -468,6 +479,20 @@ export default {
     // width: 12.4rem;
     flex: 1;
     background: #fff;
+  }
+}
+.evaluate{
+  padding-bottom: 2.5rem;
+  height: 100%;
+  .shop_rating{
+    @include wh(100%, 4.3rem);
+    background-color: #fff;
+    margin-bottom: 0.4rem;
+  }
+  .shop_eval{
+    background-color: #fff;
+    padding: 3rem 4rem 0;
+    font-size: 0.5rem;
   }
 }
 .menu {
@@ -641,18 +666,18 @@ export default {
     }
     .cart_middle {
       flex: 1;
-      .foods_total{
+      .foods_total {
         font-size: 0.75rem;
-        color:#fff;
+        color: #fff;
       }
     }
-    .cart_right{
+    .cart_right {
       background-color: #535356;
       @include wh(5rem, 100%);
       text-decoration: none;
       text-align: center;
       line-height: 2.3rem;
-      span{
+      span {
         font-size: 0.7rem;
         font-weight: 700;
         color: #fff;
