@@ -2,7 +2,7 @@
     <div class="outer" @scroll="handleScroll()">
         <!-- <header-bar head-title="我的" goBack="true"></header-bar> -->
         <!-- 商家信息 -->
-        <div class="shop_head">
+        <div class="shop_head" id="shop_head">
             <div class="header">
                 <nav class="header_all" :style="{backgroundImage: 'url('+shopDetailData.image_path+')'}">
                     <a href="javascript:;" class="goback" @click="goback"></a>
@@ -80,12 +80,12 @@
         <div class="order" id="order" v-show="showType == 'order'">
           <div class="menu_left" id="menu_left">
             <ul>
-              <li v-for="(item, key) in menuList" :key="key">{{item.name}}</li>
+              <li v-for="(item, key) in menuList" :key="key" @click="changeMenu(key)" :class="{'menu_active': key==menuIndex}">{{item.name}}</li>
             </ul>
           </div>
           <div class="menu_right" id="menu_right">
             <div class="menu">
-              <dl v-for="item in menuList" :key="item.id">
+              <dl v-for="(item, key) in menuList" :key="key">
                 <dt>
                   <div class="menu_des">
                     <strong>{{item.name}}</strong>
@@ -162,7 +162,6 @@
 
           </div>
         </div>
-
     </div>
 </template>
 <script>
@@ -174,6 +173,7 @@ export default {
     return {
       show_discount: false,
       showType: "order", //默认显示商品列表页面
+      menuIndex: 0, //选择分类默认第一个
       menuList: [], //食品列表
       shopDetailData: {}, //商铺详情
       totalNum: 0, //总个数
@@ -192,8 +192,10 @@ export default {
     footerBar
   },
   mounted() {
+    // 初始化数据
     this.initData();
-    window.addEventListener('scroll', this.handleScroll, true);
+    // 监听事件
+    window.addEventListener("scroll", this.handleScroll, true);
   },
   computed: {
     // 公告
@@ -231,19 +233,29 @@ export default {
       });
     },
     // 监听滚动事件
-    handleScroll(){
+    handleScroll() {
       // var scrollTop = document.body.scrollTop
-      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-      if(scrollTop >= 275){
+      var scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      // console.log(scrollTop)
+      // 获取头部的高度
+      var r = parseFloat($("#shop_head").height());
+      if (scrollTop >= r) {
         $("#shop_tab").css("position", "fixed");
-        $("#menu_left").css("position","fixed");
-        $("#menu_right").css({"margin-left": "25%","top":"2rem"});
-      }else{
+        $("#menu_left").css("position", "fixed");
+        $("#menu_right").css({ "margin-left": "25%", top: "2rem" });
+      } else {
         $("#shop_tab").css("position", "");
         $("#menu_left").css("position", "");
-        $("#menu_right").css({"margin-left":"","top":""});
+        $("#menu_right").css({ "margin-left": "", top: "" });
       }
-      console.log(scrollTop)
+    },
+    // 修改选择分类menuIndex
+    changeMenu(index){
+      this.menuIndex = index;
+      
     },
     // totalNum(){},
     // 显示底部优惠信息
@@ -259,21 +271,12 @@ export default {
     // 返回上一页
     goback() {
       this.$router.go(-1);
-    },
+    }
   }
 };
 </script>
 <style lang="scss">
 @import "../../style/mixin";
-// .outer{
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   bottom: 0;
-//   right: 0;
-//   height: 100%;
-// }
-
 .shop_head {
   position: relative;
   .header {
@@ -519,7 +522,12 @@ export default {
     background: #fff;
   }
 }
-.fixed{
+// 左侧菜单栏选中样式
+.menu_active {
+  background: #fff;
+  border-left: 2px solid #3190e8;
+}
+.fixed {
   position: fixed;
   top: 1.9rem;
 }
