@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="outer" @scroll="handleScroll()">
         <!-- <header-bar head-title="我的" goBack="true"></header-bar> -->
         <!-- 商家信息 -->
         <div class="shop_head">
@@ -54,42 +54,36 @@
                     </li>
                   </ul>
                 </div>
-                <div class="info_close" @click="show_discount = false">
+                <div class="info_close" @click="show_dis()">
                   <svg width="100%" height="100%" class="close_activities">
                     <line x1="0" y1="20" x2="20" y2="0" style="stroke:#999;stroke-width:2"/>
                     <line x1="0" y1="0" x2="20" y2="20" style="stroke:#999;stroke-width:2"/>
                   </svg>
                 </div>
               </div>
-              <div class="info_filter" @click="show_discount = false"></div>
+              <div :class="{info_filter: show_discount}" @click="show_dis()"></div>
             </div>
         </div>
         <!-- 头部导航 -->
-        <div class="shop_tab" style="position: sticky; top: 0; z-index: 55;">
-            <div class="tab_item">
-              <p class="tab_tit">点餐
-                <span class="bot_line"></span>
-              </p>
+        <div class="shop_tab" id="shop_tab">
+            <div class="tab_item" @click="showType='order'">
+              <p class="tab_tit" :class="{activites_show: showType=='order'}">点餐</p>
               </div>
-            <div class="tab_item">
-              <p>评价
-                <span></span>
-              </p>
+            <div class="tab_item" @click="showType='evaluate'">
+              <p class="tab_tit" :class="{activites_show: showType=='evaluate'}">评价</p>
               </div>
-            <div class="tab_item">
-              <p>商家
-                <span></span>
-              </p>
+            <div class="tab_item" @click="showType='information'" >
+              <p class="tab_tit" :class="{activites_show: showType=='information'}">商家</p>
               </div>
         </div>
         <!-- 左右菜单 -->
-        <div class="order" style="display:none;">
-          <div class="menu_left">
+        <div class="order" id="order" v-show="showType == 'order'">
+          <div class="menu_left" id="menu_left">
             <ul>
               <li v-for="(item, key) in menuList" :key="key">{{item.name}}</li>
             </ul>
           </div>
-          <div class="menu_right">
+          <div class="menu_right" id="menu_right">
             <div class="menu">
               <dl v-for="item in menuList" :key="item.id">
                 <dt>
@@ -151,16 +145,23 @@
           </div>
         </div>
         <!-- 评价 -->
-        <div class="evaluate">
+        <div class="evaluate" v-show="showType == 'evaluate'">
           <div class="shop_rating">
-
+            评价
           </div>
           <div class="shop_eval">
 
           </div>
         </div>
         <!-- 商家 -->
+        <div class="information" v-show="showType == 'information'">
+          <div class="delivery_info">
+            商家信息
+          </div>
+          <div class="activities_info">
 
+          </div>
+        </div>
 
     </div>
 </template>
@@ -172,6 +173,7 @@ export default {
   data() {
     return {
       show_discount: false,
+      showType: "order", //默认显示商品列表页面
       menuList: [], //食品列表
       shopDetailData: {}, //商铺详情
       totalNum: 0, //总个数
@@ -191,12 +193,14 @@ export default {
   },
   mounted() {
     this.initData();
+    window.addEventListener('scroll', this.handleScroll, true);
   },
   computed: {
     // 公告
     promotionInfo: function() {
       return (
-        this.shopDetailData.promotion_info || "欢迎光临，用餐高峰期请提前下单，谢谢。"
+        this.shopDetailData.promotion_info ||
+        "欢迎光临，用餐高峰期请提前下单，谢谢。"
       );
     },
     // 配送费
@@ -217,6 +221,7 @@ export default {
     }
   },
   methods: {
+    // 初始化信息
     initData() {
       this.$axios.get("/static/json/shop.json/").then(res => {
         // console.log(res.data);
@@ -225,18 +230,49 @@ export default {
         this.shopDetailData = res.data.rst;
       });
     },
+    // 监听滚动事件
+    handleScroll(){
+      // var scrollTop = document.body.scrollTop
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      if(scrollTop >= 275){
+        $("#shop_tab").css("position", "fixed");
+        $("#menu_left").css("position","fixed");
+        $("#menu_right").css({"margin-left": "25%","top":"2rem"});
+      }else{
+        $("#shop_tab").css("position", "");
+        $("#menu_left").css("position", "");
+        $("#menu_right").css({"margin-left":"","top":""});
+      }
+      console.log(scrollTop)
+    },
     // totalNum(){},
+    // 显示底部优惠信息
+    show_dis() {
+      this.show_discount = !this.show_discount;
+      if (document.body.style.overflow) {
+        document.body.style.overflow =
+          document.body.style.overflow == "auto" ? "hidden" : "auto";
+      } else {
+        document.body.style.overflow = "hidden";
+      }
+    },
+    // 返回上一页
     goback() {
       this.$router.go(-1);
     },
-    show_dis() {
-      this.show_discount = true;
-    }
   }
 };
 </script>
 <style lang="scss">
 @import "../../style/mixin";
+// .outer{
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+//   height: 100%;
+// }
 
 .shop_head {
   position: relative;
@@ -427,6 +463,8 @@ export default {
   background: #fff;
   line-height: 2rem;
   font-size: 0.74rem;
+  top: 0;
+  z-index: 100;
   // font-size: 700;
   & > .tab_item {
     flex: 1;
@@ -438,17 +476,12 @@ export default {
     .tab_tit {
       display: inline-block;
       position: relative;
-      span {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 0.111rem;
-        background-color: #2395ff;
-      }
     }
   }
+}
+.activites_show {
+  color: #2395ff;
+  border-bottom: 0.111rem solid #2395ff;
 }
 .order {
   padding-bottom: 2.5rem;
@@ -457,10 +490,14 @@ export default {
   .menu_left {
     // flex: 1;
     overflow-y: auto;
-    @include wh(3.5rem, 100%);
-    // min-width: 3.4333rem;
+    @include wh(25%, 100%);
+    // min-width: 3.5rem;
     background-color: #f8f8f8;
     overflow: scroll;
+    // float: left;
+    z-index: 99;
+    top: 2rem;
+    // flex:1;
     ul {
       position: relative;
       flex: none;
@@ -475,21 +512,40 @@ export default {
   }
   .menu_right {
     position: relative;
+    width: 75%;
     height: 100%;
     // width: 12.4rem;
-    flex: 1;
+    // flex: 3;
     background: #fff;
   }
 }
-.evaluate{
+.fixed{
+  position: fixed;
+  top: 1.9rem;
+}
+.evaluate {
   padding-bottom: 2.5rem;
   height: 100%;
-  .shop_rating{
+  .shop_rating {
     @include wh(100%, 4.3rem);
     background-color: #fff;
     margin-bottom: 0.4rem;
   }
-  .shop_eval{
+  .shop_eval {
+    background-color: #fff;
+    padding: 3rem 4rem 0;
+    font-size: 0.5rem;
+  }
+}
+.information {
+  padding-bottom: 2.5rem;
+  height: 100%;
+  .delivery_info {
+    @include wh(100%, 4.3rem);
+    background-color: #fff;
+    margin-bottom: 0.4rem;
+  }
+  .activities_info {
     background-color: #fff;
     padding: 3rem 4rem 0;
     font-size: 0.5rem;
@@ -548,9 +604,9 @@ export default {
       flex: 1;
       position: relative;
       padding-bottom: 1.2rem;
-      padding-right: 0.7999rem;
       .food_name {
         position: relative;
+        width: 5.6rem;
         padding-right: 0.5rem;
         display: flex;
         align-items: start;
@@ -558,7 +614,7 @@ export default {
           font-size: 0.7rem;
           font-weight: 700;
           overflow: hidden;
-          width: 6.5rem;
+          width: 5.6rem;
           white-space: nowrap;
           text-overflow: ellipsis;
         }
@@ -570,10 +626,10 @@ export default {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        width: 7.2rem;
+        width: 6.2rem;
       }
       .food_sales {
-        width: 7rem;
+        width: 6.2rem;
         font-size: 0.5rem;
         color: #999;
         span {
@@ -585,7 +641,7 @@ export default {
       }
       .food_pri {
         position: absolute;
-        bottom: 0;
+        bottom: 0.1rem;
         font-size: 0.65rem;
         width: 4.3rem;
 
@@ -604,8 +660,8 @@ export default {
       }
       .food_add {
         position: absolute;
-        right: 0.9rem;
-        bottom: 0;
+        right: 0.5rem;
+        bottom: 0.1rem;
         @include wh(0.9rem, 0.9rem);
         display: flex;
         span {
