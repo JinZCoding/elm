@@ -69,7 +69,7 @@
             <div class="tab_item" @click="showType='order'">
               <p class="tab_tit" :class="{activites_show: showType=='order'}">点餐</p>
               </div>
-            <div class="tab_item" @click="showType='evaluate'">
+            <div class="tab_item" @click="getEval()">
               <p class="tab_tit" :class="{activites_show: showType=='evaluate'}">评价</p>
               </div>
             <div class="tab_item" @click="showType='information'" >
@@ -147,10 +147,66 @@
         <!-- 评价 -->
         <div class="evaluate" v-show="showType == 'evaluate'">
           <div class="shop_rating">
-            评价
+            <div class="rating_left">
+              <div class="rating_num"><p>{{Number(shop_rating.overall_score).toFixed(1)}}</p></div>
+              <div class="rating_star">
+                <span>商家评价</span>
+                <rating-star :rating='Number(shop_rating.overall_score).toFixed(1)'></rating-star>
+              </div>
+            </div>
+            <div class="rating_right">
+              <div class="l_rat rat">
+                <div>
+                  <span>味道</span>
+                  <p>{{Number(shop_rating.taste_score).toFixed(1)}}</p>
+                </div>
+                <div>
+                  <span>包装</span>
+                  <p>{{Number(shop_rating.package_score).toFixed(1)}}</p>
+                </div>
+              </div>
+              <div class="r_rat rat">
+                <div>
+                  <span>配送</span>
+                  <p>{{Number(shop_rating.rider_score).toFixed(1)}}</p>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="shop_eval">
-
+            <!-- 评价分类标签 -->
+            <ul class="rating_ul">
+              <li @click="show_tag=key" :class="{'nothappy': item.unsatisfied, 'show_tag':(key === show_tag && !item.unsatisfied), 'show_tag_nothappy':(key === show_tag && item.unsatisfied)}" class="rating_tags" v-for="(item,key) in eval_tags" :key="key">
+                {{item.name}} {{item.count}}
+              </li>
+            </ul>
+            <ul>
+              <li class="eval_li" v-for="(item, key) in comments" :key="key">
+                <div class="eval_info">
+                  <div class="pic" style="width:2rem; height:2rem">
+                    <img src="" alt="">
+                  </div>
+                  <div class="content">
+                    <div class="contene_name">
+                      <h3>{{item.username}}</h3>
+                      <span>{{item.rated_at}}</span>
+                    </div>
+                    <div class="contene_rating">
+                      <rating-star :rating='item.rating'></rating-star>
+                      <span :style="{color: rating_color(item.rating)}">超赞</span>
+                    </div>
+                    <div class="content_com">很喜欢</div>
+                    <div class="content_reply">谢谢。</div>
+                    <ul class="content_img">
+                      <li><img src="" alt=""></li>
+                    </ul>
+                    <div class="content_fav">
+                      <span class="good_food"></span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
         <!-- 商家 -->
@@ -167,6 +223,7 @@
 <script>
 import headerBar from "../../components/header/head";
 import footerBar from "../../components/footer/foot";
+import ratingStar from "../../components/common/ratingStar";
 
 export default {
   data() {
@@ -176,6 +233,10 @@ export default {
       menuIndex: 0, //选择分类默认第一个
       menuList: [], //食品列表
       shopDetailData: {}, //商铺详情
+      shop_rating:{}, //评分
+      eval_tags:{}, //评价分类
+      show_tag: 0,//默认显示全部评价
+      comments:[], //评价
       totalNum: 0, //总个数
       totalPrice: 0, //总共价格
       cartFoodList: [], //购物车商品列表
@@ -189,7 +250,8 @@ export default {
   },
   components: {
     headerBar,
-    footerBar
+    footerBar,
+    ratingStar
   },
   mounted() {
     // 初始化数据
@@ -220,7 +282,7 @@ export default {
       } else {
         return null;
       }
-    }
+    },
   },
   methods: {
     // 初始化信息
@@ -252,10 +314,28 @@ export default {
         $("#menu_right").css({ "margin-left": "", top: "" });
       }
     },
+    // 初始化商店评价
+    getEval(){
+      this.showType='evaluate';
+      this.$axios.get("/static/json/shop_comments.json/").then(res => {
+        console.log(res.data.rating);
+        // console.log(res.data.rst);
+        this.comments = res.data.comments;
+        this.shop_rating = res.data.rating;
+        this.eval_tags = res.data.tags;
+      });
+    },
+    // 评论处评分颜色
+    rating_color: function(num){
+      if(num < 2){
+        return "rgb(255, 96, 0)"
+      }else{
+        return "rgb(137, 159, 188)"
+      }
+    },
     // 修改选择分类menuIndex
-    changeMenu(index){
+    changeMenu(index) {
       this.menuIndex = index;
-      
     },
     // totalNum(){},
     // 显示底部优惠信息
@@ -498,7 +578,7 @@ export default {
     background-color: #f8f8f8;
     overflow: scroll;
     // float: left;
-    z-index: 99;
+    z-index: 98;
     top: 2rem;
     // flex:1;
     ul {
@@ -536,13 +616,149 @@ export default {
   height: 100%;
   .shop_rating {
     @include wh(100%, 4.3rem);
+    padding: 0.8rem 0 1.2rem 1rem;
     background-color: #fff;
     margin-bottom: 0.4rem;
+    display: flex;
+    .rating_left {
+      width: 6.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #666;
+      .rating_num {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p {
+          font-size: 1.6rem;
+          color: #ff6000;
+        }
+      }
+      .rating_star {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        span {
+          font-size: 0.67rem;
+          margin-bottom: 0.1rem;
+        }
+      }
+    }
+    .rating_right {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #666!important;
+      flex: 1;
+      .l_rat {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex: 1;
+        padding: 0 0.5rem;
+      }
+      .r_rat{
+        width: 3.4rem;
+        border-left: 1px solid #ddd;
+      }
+    }
   }
   .shop_eval {
     background-color: #fff;
-    padding: 3rem 4rem 0;
+    padding: .5rem .6rem 0;
     font-size: 0.5rem;
+    .rating_ul{
+      padding-bottom: 0.7rem;
+      border-bottom: 1px solid #eee;
+    }
+
+  }
+}
+// 评价列表
+.eval_li{
+  padding: 0.3rem 0 0.4rem;
+  border-bottom: 0.01rem solid #eee;
+}
+.eval_info{
+  position: relative;
+  padding-left: 2rem;
+  .pic{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+  }
+}
+.content{
+  font-size: 0.58rem;
+}
+.contene_name{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h3{
+    font-size: 0.56rem;
+    margin-top: 0;
+    color: #333;
+    margin-right: 0.4rem;
+  }
+  span{
+    color: #999;
+    font-size: 0.45rem;
+  }
+}
+.contene_rating{
+  display: flex;
+  align-items: center;
+  margin: 0.3rem 0;
+  span{
+    font-size: 0.45rem;
+    padding-left: 0.3rem;
+  }
+}
+// 评价类别
+.rating_tags{
+    display: inline-block;
+    padding: 0 .45rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    margin: .093333rem;
+    font-size: .54rem;
+    border-radius: .0253333rem;
+    color: #6d7885;
+    background-color: #ebf5ff;
+}
+.nothappy{
+  color: #aaa;
+  background-color: #f5f5f5;
+}
+.show_tag{
+  color: #fff;
+  background-color: #0097ff;
+}
+.show_tag_nothappy{
+  color: #fff;
+  background-color: #ccc;
+}
+.rat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  span{
+    font-size: 0.67rem;
+    margin-bottom: 0.3rem;
+  }
+  p{
+    font-size: 1rem;
   }
 }
 .information {
@@ -789,8 +1005,4 @@ export default {
   color: #fff;
   white-space: nowrap;
 }
-// .shop_menu{
-//     position: relative;
-//     padding-top: 2rem;
-// }
 </style>
