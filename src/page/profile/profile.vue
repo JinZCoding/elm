@@ -193,7 +193,7 @@ export default {
       this.$axios
         .get("/static/json/userinfo.json/")
         .then(res => {
-          this.$store.state.userInfo = res.data;
+          // this.$store.state.userInfo = res.data;
           // console.log(res.data);
           // console.log(this.userInfo)
           this.userInfo.phone = this.$route.params.phone;

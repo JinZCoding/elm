@@ -1,0 +1,2309 @@
+{
+    "menu": [
+        {
+            "activity": null,
+            "description": "大家喜欢吃，才叫真好吃。",
+            "foods": [
+                {
+                    "activity": null,
+                    "attributes": [],
+                    "attrs": [
+                        {
+                            "name": "温度",
+                            "values": [
+                                "去冰",
+                                "少冰",
+                                "标准冰",
+                                "多冰",
+                                "温",
+                                "热"
+                            ]
+                        }
+                    ],
+                    "brand": null,
+                    "category_id": 545464977,
+                    "cold_box": null,
+                    "description": "香醇浓郁的奶茶中加入香Q弹牙的珍珠，嚼劲十足，人气饮品好喝不简单。",
+                    "image_path": "../../static/img/naicha.jpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524499882120",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 166,
+                    "name": "珍珠奶茶",
+                    "photos": [
+                        "ee3e17dbdcef075d98ee258e2a82d51ejpeg"
+                    ],
+                    "rating": 4.11,
+                    "rating_count": 9,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 9,
+                    "satisfy_rate": 100,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976678041,
+                            "is_essential": false,
+                            "item_id": "524499882120",
+                            "name": "珍珠奶茶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "zhenzhunaicha",
+                            "price": 11,
+                            "promotion_stock": -1,
+                            "recent_popularity": 107,
+                            "recent_rating": 4.11,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600465292424",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大杯"
+                                }
+                            ],
+                            "stock": 9883,
+                            "virtual_food_id": 915712437,
+                            "weight": 0
+                        },
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976669601,
+                            "is_essential": false,
+                            "item_id": "524499882120",
+                            "name": "珍珠奶茶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "zhenzhunaicha",
+                            "price": 9,
+                            "promotion_stock": -1,
+                            "recent_popularity": 59,
+                            "recent_rating": 0.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600465293448",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "中杯"
+                                }
+                            ],
+                            "stock": 9928,
+                            "virtual_food_id": 915712437,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "大杯",
+                                "中杯"
+                            ]
+                        }
+                    ],
+                    "tips": "9评价 月售166份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915712437
+                },
+                {
+                    "activity": null,
+                    "attributes": [],
+                    "attrs": [
+                        {
+                            "name": "甜度",
+                            "values": [
+                                "全糖",
+                                "半糖",
+                                "微糖",
+                                "无糖",
+                                "多糖"
+                            ]
+                        },
+                        {
+                            "name": "温度",
+                            "values": [
+                                "热",
+                                "温热",
+                                "常温",
+                                "去冰",
+                                "少冰",
+                                "多冰"
+                            ]
+                        }
+                    ],
+                    "brand": null,
+                    "category_id": 545464977,
+                    "cold_box": null,
+                    "description": "",
+                    "image_path": "../../static/img/naicha.jpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524553585800",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 47,
+                    "name": "蛋糕曲奇奶茶",
+                    "photos": [
+                        "c1cddfda65b4d538b8bcd4b0fa26498ejpeg"
+                    ],
+                    "rating": 4.25,
+                    "rating_count": 13,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 13,
+                    "satisfy_rate": 100,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976789483,
+                            "is_essential": false,
+                            "item_id": "524553585800",
+                            "name": "蛋糕曲奇奶茶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "dangaoquqinaicha",
+                            "price": 10,
+                            "promotion_stock": -1,
+                            "recent_popularity": 18,
+                            "recent_rating": 4.5,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600592313480",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "中杯"
+                                }
+                            ],
+                            "stock": 9981,
+                            "virtual_food_id": 915813383,
+                            "weight": 0
+                        },
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976780683,
+                            "is_essential": false,
+                            "item_id": "524553585800",
+                            "name": "蛋糕曲奇奶茶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "dangaoquqinaicha",
+                            "price": 12,
+                            "promotion_stock": -1,
+                            "recent_popularity": 29,
+                            "recent_rating": 4.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600615799944",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大杯"
+                                }
+                            ],
+                            "stock": 9967,
+                            "virtual_food_id": 915813383,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "中杯",
+                                "大杯"
+                            ]
+                        }
+                    ],
+                    "tips": "13评价 月售47份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915813383
+                },
+                {
+                    "activity": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "brand": null,
+                    "category_id": 545479765,
+                    "cold_box": null,
+                    "description": "",
+                    "image_path": "../../static/img/naicha.jpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524471996552",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 38,
+                    "name": "椰果",
+                    "photos": [
+                        "d1a7552393539d946a83e4572b1313e5jpeg"
+                    ],
+                    "rating": 4.17,
+                    "rating_count": 6,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 6,
+                    "satisfy_rate": 100,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976660433,
+                            "is_essential": false,
+                            "item_id": "524471996552",
+                            "name": "椰果",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "yeguo",
+                            "price": 2,
+                            "promotion_stock": -1,
+                            "recent_popularity": 38,
+                            "recent_rating": 4.17,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600482442376",
+                            "sold_out": false,
+                            "specs": [],
+                            "stock": 9960,
+                            "virtual_food_id": 915716869,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [],
+                    "tips": "6评价 月售38份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915716869
+                },
+                {
+                    "activity": null,
+                    "attributes": [],
+                    "attrs": [],
+                    "brand": null,
+                    "category_id": 545479765,
+                    "cold_box": null,
+                    "description": "",
+                    "image_path": "../../static/img/naicha.jpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524471995528",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 31,
+                    "name": "红豆",
+                    "photos": [
+                        "dbb5f2a05e3b408f1e746d691502ac94jpeg"
+                    ],
+                    "rating": 4.17,
+                    "rating_count": 6,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 6,
+                    "satisfy_rate": 100,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976674236,
+                            "is_essential": false,
+                            "item_id": "524471995528",
+                            "name": "红豆",
+                            "original_price": null,
+                            "packing_fee": 0,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "hongdou",
+                            "price": 2,
+                            "promotion_stock": -1,
+                            "recent_popularity": 31,
+                            "recent_rating": 4.17,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600478103688",
+                            "sold_out": false,
+                            "specs": [],
+                            "stock": 9962,
+                            "virtual_food_id": 915716868,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [],
+                    "tips": "6评价 月售31份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915716868
+                },
+                {
+                    "activity": null,
+                    "attributes": [
+                        {
+                            "icon_color": "ec9c68",
+                            "icon_name": "招牌"
+                        }
+                    ],
+                    "attrs": [
+                        {
+                            "name": "温度",
+                            "values": [
+                                "去冰",
+                                "少冰",
+                                "标准冰",
+                                "多冰",
+                                "温",
+                                "热"
+                            ]
+                        }
+                    ],
+                    "brand": null,
+                    "category_id": 545464977,
+                    "cold_box": null,
+                    "description": "浓郁奶茶中搭配香滑布丁，Q弹珍珠及鲜嫩仙草，多层次的丰富口感，一次满足。",
+                    "image_path": "../../static/img/naicha.jpeg",
+                    "is_essential": false,
+                    "is_featured": 1,
+                    "item_id": "524472004744",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 239,
+                    "name": "奶茶三兄弟",
+                    "photos": [
+                        "6624e8c1e60c671dd03a82c91dcc9f38jpeg"
+                    ],
+                    "rating": 3.965,
+                    "rating_count": 20,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 18,
+                    "satisfy_rate": 90,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976687347,
+                            "is_essential": false,
+                            "item_id": "524472004744",
+                            "name": "奶茶三兄弟",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "naichasanxiongdi",
+                            "price": 11,
+                            "promotion_stock": -1,
+                            "recent_popularity": 110,
+                            "recent_rating": 3.82,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600487477384",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "中杯"
+                                }
+                            ],
+                            "stock": 9876,
+                            "virtual_food_id": 915716876,
+                            "weight": 0
+                        },
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976691645,
+                            "is_essential": false,
+                            "item_id": "524472004744",
+                            "name": "奶茶三兄弟",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "naichasanxiongdi",
+                            "price": 13,
+                            "promotion_stock": -1,
+                            "recent_popularity": 129,
+                            "recent_rating": 4.11,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600487478408",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大杯"
+                                }
+                            ],
+                            "stock": 9861,
+                            "virtual_food_id": 915716876,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "中杯",
+                                "大杯"
+                            ]
+                        }
+                    ],
+                    "tips": "20评价 月售239份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915716876
+                }
+            ],
+            "global_id": "-1",
+            "grey_icon_url": "aba732b4ca103b2521c872442d7e5d4epng",
+            "icon_url": "06a05b267f338acfeb8bd682d16e836dpng",
+            "id": -1,
+            "is_activity": null,
+            "is_selected": true,
+            "name": "热销",
+            "type": 2
+        },
+        {
+            "activity": null,
+            "description": "美味又实惠，大家快来抢",
+            "foods": [
+                {
+                    "activity": {
+                        "activity_type": "",
+                        "applicable_quantity": 1,
+                        "applicable_quantity_detail_text": "每单限1份优惠，超出的份数按原价计算",
+                        "applicable_quantity_text": "每单限1份优惠",
+                        "applicable_quantity_text_color": "eb6551",
+                        "benefit_text": "",
+                        "description": "单品定价",
+                        "discount": 1.0,
+                        "fixed_price": 15.0,
+                        "icon_color": "eb6551",
+                        "icon_name": "特",
+                        "id": 1715983897,
+                        "image_text": "限1份",
+                        "image_text_color": "f1884f",
+                        "is_exclusive": 0,
+                        "is_price_changed": true,
+                        "is_promotion_toast_popup": true,
+                        "is_tied_selling": false,
+                        "max_quantity": 1,
+                        "minimum_delivery_rule": 1,
+                        "must_super_vip": false,
+                        "name": "单品定价",
+                        "quantity_condition": 1,
+                        "quantity_text": "",
+                        "sum_condition": 0
+                    },
+                    "attributes": [],
+                    "attrs": [
+                        {
+                            "name": "甜度",
+                            "values": [
+                                "全糖",
+                                "半糖",
+                                "微糖",
+                                "无糖",
+                                "多糖"
+                            ]
+                        },
+                        {
+                            "name": "温度",
+                            "values": [
+                                "热",
+                                "温热",
+                                "常温",
+                                "去冰",
+                                "少冰",
+                                "多冰"
+                            ]
+                        }
+                    ],
+                    "brand": null,
+                    "category_id": 545460709,
+                    "cold_box": null,
+                    "description": "",
+                    "image_path": "eef09c7725205a2d3bc7cfc8d3b8a358jpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524606174344",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 68,
+                    "name": "焦糖青稞布丁奶茶无糖去冰",
+                    "photos": [
+                        "eef09c7725205a2d3bc7cfc8d3b8a358jpeg"
+                    ],
+                    "rating": 3.83,
+                    "rating_count": 6,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 5,
+                    "satisfy_rate": 83,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976852984,
+                            "is_essential": false,
+                            "item_id": "524606174344",
+                            "name": "焦糖青稞布丁奶茶无糖去冰",
+                            "original_price": 17,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "jiaotangqingkebudingnaichawutangqubing",
+                            "price": 15.0,
+                            "promotion_stock": 9929,
+                            "recent_popularity": 68,
+                            "recent_rating": 3.83,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600649497736",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "焦糖青稞布丁奶茶无糖去冰"
+                                }
+                            ],
+                            "stock": 9929,
+                            "virtual_food_id": 915816631,
+                            "weight": 0
+                        },
+                        {
+                            "checkout_mode": 1,
+                            "food_id": -10000,
+                            "is_essential": false,
+                            "item_id": "524606174344",
+                            "name": "焦糖青稞布丁奶茶无糖去冰",
+                            "original_price": 17,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "jiaotangqingkebudingnaichawutangqubing",
+                            "price": 15.0,
+                            "promotion_stock": -1,
+                            "recent_popularity": 0,
+                            "recent_rating": 3.83,
+                            "restaurant_id": 167616232,
+                            "sku_id": "-10000",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "默认"
+                                }
+                            ],
+                            "stock": 0,
+                            "virtual_food_id": 915816631,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "焦糖青稞布丁奶茶无糖去冰",
+                                "默认"
+                            ]
+                        }
+                    ],
+                    "tips": "6评价 月售68份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915816631
+                },
+                {
+                    "activity": {
+                        "activity_type": "",
+                        "applicable_quantity": 1,
+                        "applicable_quantity_detail_text": "每单限1份优惠，超出的份数按原价计算",
+                        "applicable_quantity_text": "每单限1份优惠",
+                        "applicable_quantity_text_color": "eb6551",
+                        "benefit_text": "",
+                        "description": "单品定价",
+                        "discount": 1.0,
+                        "fixed_price": 15.0,
+                        "icon_color": "eb6551",
+                        "icon_name": "特",
+                        "id": 1715983905,
+                        "image_text": "限1份",
+                        "image_text_color": "f1884f",
+                        "is_exclusive": 0,
+                        "is_price_changed": true,
+                        "is_promotion_toast_popup": true,
+                        "is_tied_selling": false,
+                        "max_quantity": 1,
+                        "minimum_delivery_rule": 1,
+                        "must_super_vip": false,
+                        "name": "单品定价",
+                        "quantity_condition": 1,
+                        "quantity_text": "",
+                        "sum_condition": 0
+                    },
+                    "attributes": [],
+                    "attrs": [
+                        {
+                            "name": "甜度",
+                            "values": [
+                                "全糖",
+                                "半糖",
+                                "微糖",
+                                "无糖",
+                                "多糖"
+                            ]
+                        },
+                        {
+                            "name": "温度",
+                            "values": [
+                                "热",
+                                "温热",
+                                "常温",
+                                "去冰",
+                                "少冰",
+                                "多冰"
+                            ]
+                        }
+                    ],
+                    "brand": null,
+                    "category_id": 545460709,
+                    "cold_box": null,
+                    "description": "",
+                    "image_path": "0a27ea7aba51e7c3752abe44a39b4c8cjpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524592524424",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 18,
+                    "name": "茉香奶茶加珍珠布丁奶茶半糖少冰",
+                    "photos": [
+                        "0a27ea7aba51e7c3752abe44a39b4c8cjpeg"
+                    ],
+                    "rating": 5.0,
+                    "rating_count": 1,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 1,
+                    "satisfy_rate": 100,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976834869,
+                            "is_essential": false,
+                            "item_id": "524592524424",
+                            "name": "茉香奶茶加珍珠布丁奶茶半糖少冰",
+                            "original_price": 17,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "moxiangnaichajiazhenzhubudingnaichabantangshaobing",
+                            "price": 15.0,
+                            "promotion_stock": 9980,
+                            "recent_popularity": 18,
+                            "recent_rating": 5.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600634497160",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "茉香奶茶加珍珠布丁奶茶半糖少冰"
+                                }
+                            ],
+                            "stock": 9980,
+                            "virtual_food_id": 915812089,
+                            "weight": 0
+                        },
+                        {
+                            "checkout_mode": 1,
+                            "food_id": -10000,
+                            "is_essential": false,
+                            "item_id": "524592524424",
+                            "name": "茉香奶茶加珍珠布丁奶茶半糖少冰",
+                            "original_price": 17,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "moxiangnaichajiazhenzhubudingnaichabantangshaobing",
+                            "price": 15.0,
+                            "promotion_stock": -1,
+                            "recent_popularity": 0,
+                            "recent_rating": 5.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "-10000",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "默认"
+                                }
+                            ],
+                            "stock": 0,
+                            "virtual_food_id": 915812089,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "茉香奶茶加珍珠布丁奶茶半糖少冰",
+                                "默认"
+                            ]
+                        }
+                    ],
+                    "tips": "1评价 月售18份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915812089
+                }
+            ],
+            "global_id": "-2",
+            "grey_icon_url": "f8ddec5b7355581faa2bf4e24942dcc2png",
+            "icon_url": "b918cf4f67e0e8223931cd595dc932fepng",
+            "id": -2,
+            "is_activity": null,
+            "is_selected": false,
+            "name": "优惠",
+            "type": 3
+        },
+        {
+            "activity": null,
+            "description": "",
+            "foods": [
+                {
+                    "activity": {
+                        "activity_type": "",
+                        "applicable_quantity": 1,
+                        "applicable_quantity_detail_text": "每单限1份优惠，超出的份数按原价计算",
+                        "applicable_quantity_text": "每单限1份优惠",
+                        "applicable_quantity_text_color": "eb6551",
+                        "benefit_text": "",
+                        "description": "单品定价",
+                        "discount": 1.0,
+                        "fixed_price": 15.0,
+                        "icon_color": "eb6551",
+                        "icon_name": "特",
+                        "id": 1715983897,
+                        "image_text": "限1份",
+                        "image_text_color": "f1884f",
+                        "is_exclusive": 0,
+                        "is_price_changed": true,
+                        "is_promotion_toast_popup": true,
+                        "is_tied_selling": false,
+                        "max_quantity": 1,
+                        "minimum_delivery_rule": 1,
+                        "must_super_vip": false,
+                        "name": "单品定价",
+                        "quantity_condition": 1,
+                        "quantity_text": "",
+                        "sum_condition": 0
+                    },
+                    "attributes": [],
+                    "attrs": [
+                        {
+                            "name": "甜度",
+                            "values": [
+                                "全糖",
+                                "半糖",
+                                "微糖",
+                                "无糖",
+                                "多糖"
+                            ]
+                        },
+                        {
+                            "name": "温度",
+                            "values": [
+                                "热",
+                                "温热",
+                                "常温",
+                                "去冰",
+                                "少冰",
+                                "多冰"
+                            ]
+                        }
+                    ],
+                    "brand": null,
+                    "category_id": 545460709,
+                    "cold_box": null,
+                    "description": "",
+                    "image_path": "eef09c7725205a2d3bc7cfc8d3b8a358jpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524606174344",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 68,
+                    "name": "焦糖青稞布丁奶茶无糖去冰",
+                    "photos": [
+                        "eef09c7725205a2d3bc7cfc8d3b8a358jpeg"
+                    ],
+                    "rating": 3.83,
+                    "rating_count": 6,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 5,
+                    "satisfy_rate": 83,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976852984,
+                            "is_essential": false,
+                            "item_id": "524606174344",
+                            "name": "焦糖青稞布丁奶茶无糖去冰",
+                            "original_price": 17,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "jiaotangqingkebudingnaichawutangqubing",
+                            "price": 15.0,
+                            "promotion_stock": 9929,
+                            "recent_popularity": 68,
+                            "recent_rating": 3.83,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600649497736",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "焦糖青稞布丁奶茶无糖去冰"
+                                }
+                            ],
+                            "stock": 9929,
+                            "virtual_food_id": 915816631,
+                            "weight": 0
+                        },
+                        {
+                            "checkout_mode": 1,
+                            "food_id": -10000,
+                            "is_essential": false,
+                            "item_id": "524606174344",
+                            "name": "焦糖青稞布丁奶茶无糖去冰",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "jiaotangqingkebudingnaichawutangqubing",
+                            "price": 17,
+                            "promotion_stock": -1,
+                            "recent_popularity": 0,
+                            "recent_rating": 3.83,
+                            "restaurant_id": 167616232,
+                            "sku_id": "-10000",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "默认"
+                                }
+                            ],
+                            "stock": 0,
+                            "virtual_food_id": 915816631,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "焦糖青稞布丁奶茶无糖去冰",
+                                "默认"
+                            ]
+                        }
+                    ],
+                    "tips": "6评价 月售68份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915816631
+                },
+                {
+                    "activity": {
+                        "activity_type": "",
+                        "applicable_quantity": 1,
+                        "applicable_quantity_detail_text": "每单限1份优惠，超出的份数按原价计算",
+                        "applicable_quantity_text": "每单限1份优惠",
+                        "applicable_quantity_text_color": "eb6551",
+                        "benefit_text": "",
+                        "description": "单品定价",
+                        "discount": 1.0,
+                        "fixed_price": 15.0,
+                        "icon_color": "eb6551",
+                        "icon_name": "特",
+                        "id": 1715983905,
+                        "image_text": "限1份",
+                        "image_text_color": "f1884f",
+                        "is_exclusive": 0,
+                        "is_price_changed": true,
+                        "is_promotion_toast_popup": true,
+                        "is_tied_selling": false,
+                        "max_quantity": 1,
+                        "minimum_delivery_rule": 1,
+                        "must_super_vip": false,
+                        "name": "单品定价",
+                        "quantity_condition": 1,
+                        "quantity_text": "",
+                        "sum_condition": 0
+                    },
+                    "attributes": [],
+                    "attrs": [
+                        {
+                            "name": "甜度",
+                            "values": [
+                                "全糖",
+                                "半糖",
+                                "微糖",
+                                "无糖",
+                                "多糖"
+                            ]
+                        },
+                        {
+                            "name": "温度",
+                            "values": [
+                                "热",
+                                "温热",
+                                "常温",
+                                "去冰",
+                                "少冰",
+                                "多冰"
+                            ]
+                        }
+                    ],
+                    "brand": null,
+                    "category_id": 545460709,
+                    "cold_box": null,
+                    "description": "",
+                    "image_path": "0a27ea7aba51e7c3752abe44a39b4c8cjpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524592524424",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 18,
+                    "name": "茉香奶茶加珍珠布丁奶茶半糖少冰",
+                    "photos": [
+                        "0a27ea7aba51e7c3752abe44a39b4c8cjpeg"
+                    ],
+                    "rating": 5.0,
+                    "rating_count": 1,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 1,
+                    "satisfy_rate": 100,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976834869,
+                            "is_essential": false,
+                            "item_id": "524592524424",
+                            "name": "茉香奶茶加珍珠布丁奶茶半糖少冰",
+                            "original_price": 17,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "moxiangnaichajiazhenzhubudingnaichabantangshaobing",
+                            "price": 15.0,
+                            "promotion_stock": 9980,
+                            "recent_popularity": 18,
+                            "recent_rating": 5.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600634497160",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "茉香奶茶加珍珠布丁奶茶半糖少冰"
+                                }
+                            ],
+                            "stock": 9980,
+                            "virtual_food_id": 915812089,
+                            "weight": 0
+                        },
+                        {
+                            "checkout_mode": 1,
+                            "food_id": -10000,
+                            "is_essential": false,
+                            "item_id": "524592524424",
+                            "name": "茉香奶茶加珍珠布丁奶茶半糖少冰",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "moxiangnaichajiazhenzhubudingnaichabantangshaobing",
+                            "price": 17,
+                            "promotion_stock": -1,
+                            "recent_popularity": 0,
+                            "recent_rating": 5.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "-10000",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "默认"
+                                }
+                            ],
+                            "stock": 0,
+                            "virtual_food_id": 915812089,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "茉香奶茶加珍珠布丁奶茶半糖少冰",
+                                "默认"
+                            ]
+                        }
+                    ],
+                    "tips": "1评价 月售18份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915812089
+                }
+            ],
+            "global_id": "59251451016",
+            "grey_icon_url": "",
+            "icon_url": "",
+            "id": 545460709,
+            "is_activity": false,
+            "is_selected": false,
+            "name": "抖音网红推荐",
+            "type": 1
+        },
+        {
+            "activity": null,
+            "description": "",
+            "foods": [
+                {
+                    "activity": null,
+                    "attributes": [],
+                    "attrs": [
+                        {
+                            "name": "甜度",
+                            "values": [
+                                "微糖",
+                                "半糖",
+                                "无糖",
+                                "标准糖",
+                                "多糖"
+                            ]
+                        },
+                        {
+                            "name": "温度",
+                            "values": [
+                                "常温",
+                                "温",
+                                "热",
+                                "去冰",
+                                "少冰",
+                                "多冰"
+                            ]
+                        }
+                    ],
+                    "brand": null,
+                    "category_id": 545465409,
+                    "cold_box": null,
+                    "description": "",
+                    "image_path": "28e01a127c562a0df8c48c1ab5faf400jpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524551652488",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 42,
+                    "name": "鲜芋奶茶",
+                    "photos": [
+                        "28e01a127c562a0df8c48c1ab5faf400jpeg"
+                    ],
+                    "rating": 4.165,
+                    "rating_count": 5,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 5,
+                    "satisfy_rate": 100,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976791864,
+                            "is_essential": false,
+                            "item_id": "524551652488",
+                            "name": "鲜芋奶茶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyunaicha",
+                            "price": 10,
+                            "promotion_stock": -1,
+                            "recent_popularity": 21,
+                            "recent_rating": 4.33,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600563075208",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "中杯"
+                                }
+                            ],
+                            "stock": 9978,
+                            "virtual_food_id": 915785004,
+                            "weight": 0
+                        },
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976774192,
+                            "is_essential": false,
+                            "item_id": "524551652488",
+                            "name": "鲜芋奶茶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyunaicha",
+                            "price": 12,
+                            "promotion_stock": -1,
+                            "recent_popularity": 21,
+                            "recent_rating": 4.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600577247368",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大杯"
+                                }
+                            ],
+                            "stock": 9977,
+                            "virtual_food_id": 915785004,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "中杯",
+                                "大杯"
+                            ]
+                        }
+                    ],
+                    "tips": "5评价 月售42份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915785004
+                },
+                {
+                    "activity": null,
+                    "attributes": [],
+                    "attrs": [
+                        {
+                            "name": "甜度",
+                            "values": [
+                                "微糖",
+                                "半糖",
+                                "无糖",
+                                "标准糖",
+                                "多糖"
+                            ]
+                        },
+                        {
+                            "name": "温度",
+                            "values": [
+                                "常温",
+                                "温",
+                                "热",
+                                "去冰",
+                                "少冰",
+                                "多冰"
+                            ]
+                        }
+                    ],
+                    "brand": null,
+                    "category_id": 545465409,
+                    "cold_box": null,
+                    "description": "",
+                    "image_path": "1f88f2ea716304a74e366d49a87b803djpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524560962696",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 10,
+                    "name": "鲜芋西米奶茶",
+                    "photos": [
+                        "1f88f2ea716304a74e366d49a87b803djpeg"
+                    ],
+                    "rating": 0,
+                    "rating_count": 0,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 0,
+                    "satisfy_rate": 0,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976778174,
+                            "is_essential": false,
+                            "item_id": "524560962696",
+                            "name": "鲜芋西米奶茶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyuximinaicha",
+                            "price": 11,
+                            "promotion_stock": -1,
+                            "recent_popularity": 4,
+                            "recent_rating": 0.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600576822408",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "中杯"
+                                }
+                            ],
+                            "stock": 9996,
+                            "virtual_food_id": 915794022,
+                            "weight": 0
+                        },
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976786503,
+                            "is_essential": false,
+                            "item_id": "524560962696",
+                            "name": "鲜芋西米奶茶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyuximinaicha",
+                            "price": 13,
+                            "promotion_stock": -1,
+                            "recent_popularity": 6,
+                            "recent_rating": 0.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600594796680",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大杯"
+                                }
+                            ],
+                            "stock": 9993,
+                            "virtual_food_id": 915794022,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "中杯",
+                                "大杯"
+                            ]
+                        }
+                    ],
+                    "tips": "0评价 月售10份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915794022
+                },
+                {
+                    "activity": null,
+                    "attributes": [],
+                    "attrs": [
+                        {
+                            "name": "甜度",
+                            "values": [
+                                "微糖",
+                                "半糖",
+                                "标准糖",
+                                "无糖",
+                                "多糖"
+                            ]
+                        },
+                        {
+                            "name": "温度",
+                            "values": [
+                                "常温",
+                                "温",
+                                "热",
+                                "去冰",
+                                "少冰",
+                                "多冰"
+                            ]
+                        }
+                    ],
+                    "brand": null,
+                    "category_id": 545465409,
+                    "cold_box": null,
+                    "description": "",
+                    "image_path": "39456ec3a2c29c4a77aa27df9006c648jpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524561125512",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 20,
+                    "name": "鲜芋珍珠奶茶",
+                    "photos": [
+                        "39456ec3a2c29c4a77aa27df9006c648jpeg"
+                    ],
+                    "rating": 4.25,
+                    "rating_count": 5,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 5,
+                    "satisfy_rate": 100,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976782290,
+                            "is_essential": false,
+                            "item_id": "524561125512",
+                            "name": "鲜芋珍珠奶茶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyuzhenzhunaicha",
+                            "price": 11,
+                            "promotion_stock": -1,
+                            "recent_popularity": 6,
+                            "recent_rating": 4.5,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600585196680",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "中杯"
+                                }
+                            ],
+                            "stock": 9992,
+                            "virtual_food_id": 915771838,
+                            "weight": 0
+                        },
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976791728,
+                            "is_essential": false,
+                            "item_id": "524561125512",
+                            "name": "鲜芋珍珠奶茶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyuzhenzhunaicha",
+                            "price": 13,
+                            "promotion_stock": -1,
+                            "recent_popularity": 14,
+                            "recent_rating": 4.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600572591240",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大杯"
+                                }
+                            ],
+                            "stock": 9983,
+                            "virtual_food_id": 915771838,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "中杯",
+                                "大杯"
+                            ]
+                        }
+                    ],
+                    "tips": "5评价 月售20份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915771838
+                },
+                {
+                    "activity": null,
+                    "attributes": [],
+                    "attrs": [
+                        {
+                            "name": "甜度",
+                            "values": [
+                                "微糖",
+                                "半糖",
+                                "无糖",
+                                "标准糖",
+                                "多糖"
+                            ]
+                        },
+                        {
+                            "name": "温度",
+                            "values": [
+                                "常温",
+                                "温",
+                                "热",
+                                "去冰",
+                                "少冰",
+                                "多冰"
+                            ]
+                        }
+                    ],
+                    "brand": null,
+                    "category_id": 545465409,
+                    "cold_box": null,
+                    "description": "",
+                    "image_path": "3da8ea728dc0ef482bcd32ff176ad128jpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524542331016",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 21,
+                    "name": "鲜芋青稞奶茶",
+                    "photos": [
+                        "3da8ea728dc0ef482bcd32ff176ad128jpeg"
+                    ],
+                    "rating": 3.5,
+                    "rating_count": 2,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 1,
+                    "satisfy_rate": 50,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976773395,
+                            "is_essential": false,
+                            "item_id": "524542331016",
+                            "name": "鲜芋青稞奶茶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyuqingkenaicha",
+                            "price": 11,
+                            "promotion_stock": -1,
+                            "recent_popularity": 7,
+                            "recent_rating": 0.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600571922568",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "中杯"
+                                }
+                            ],
+                            "stock": 9991,
+                            "virtual_food_id": 915784283,
+                            "weight": 0
+                        },
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976773396,
+                            "is_essential": false,
+                            "item_id": "524542331016",
+                            "name": "鲜芋青稞奶茶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyuqingkenaicha",
+                            "price": 13,
+                            "promotion_stock": -1,
+                            "recent_popularity": 14,
+                            "recent_rating": 3.5,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600571923592",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大杯"
+                                }
+                            ],
+                            "stock": 9984,
+                            "virtual_food_id": 915784283,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "中杯",
+                                "大杯"
+                            ]
+                        }
+                    ],
+                    "tips": "2评价 月售21份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915784283
+                },
+                {
+                    "activity": null,
+                    "attributes": [],
+                    "attrs": [
+                        {
+                            "name": "甜度",
+                            "values": [
+                                "微糖",
+                                "无糖",
+                                "标准糖",
+                                "半糖",
+                                "多糖"
+                            ]
+                        },
+                        {
+                            "name": "温度",
+                            "values": [
+                                "常温",
+                                "温",
+                                "热",
+                                "去冰",
+                                "少冰",
+                                "多冰"
+                            ]
+                        }
+                    ],
+                    "brand": null,
+                    "category_id": 545465409,
+                    "cold_box": null,
+                    "description": "",
+                    "image_path": "82d0064576239da8e4856812a54ac9abjpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524565275784",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 18,
+                    "name": "鲜芋红豆奶茶",
+                    "photos": [
+                        "82d0064576239da8e4856812a54ac9abjpeg"
+                    ],
+                    "rating": 2.0,
+                    "rating_count": 1,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 0,
+                    "satisfy_rate": 0,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976778141,
+                            "is_essential": false,
+                            "item_id": "524565275784",
+                            "name": "鲜芋红豆奶茶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyuhongdounaicha",
+                            "price": 11,
+                            "promotion_stock": -1,
+                            "recent_popularity": 9,
+                            "recent_rating": 0.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600576737416",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "中杯"
+                                }
+                            ],
+                            "stock": 9987,
+                            "virtual_food_id": 915771677,
+                            "weight": 0
+                        },
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976770388,
+                            "is_essential": false,
+                            "item_id": "524565275784",
+                            "name": "鲜芋红豆奶茶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyuhongdounaicha",
+                            "price": 13,
+                            "promotion_stock": -1,
+                            "recent_popularity": 9,
+                            "recent_rating": 2.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600589974664",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大杯"
+                                }
+                            ],
+                            "stock": 9991,
+                            "virtual_food_id": 915771677,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "中杯",
+                                "大杯"
+                            ]
+                        }
+                    ],
+                    "tips": "1评价 月售18份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915771677
+                },
+                {
+                    "activity": null,
+                    "attributes": [],
+                    "attrs": [
+                        {
+                            "name": "甜度",
+                            "values": [
+                                "微糖",
+                                "半糖",
+                                "标准糖",
+                                "无糖",
+                                "多糖"
+                            ]
+                        },
+                        {
+                            "name": "温度",
+                            "values": [
+                                "常温",
+                                "温",
+                                "热",
+                                "去冰",
+                                "少冰",
+                                "多冰"
+                            ]
+                        }
+                    ],
+                    "brand": null,
+                    "category_id": 545465409,
+                    "cold_box": null,
+                    "description": "",
+                    "image_path": "b1dab7ed01dc33830ebd26bfc0f28a2djpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524571294856",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 13,
+                    "name": "鲜芋西米牛奶",
+                    "photos": [
+                        "b1dab7ed01dc33830ebd26bfc0f28a2djpeg"
+                    ],
+                    "rating": 4.0,
+                    "rating_count": 2,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 2,
+                    "satisfy_rate": 100,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976779482,
+                            "is_essential": false,
+                            "item_id": "524571294856",
+                            "name": "鲜芋西米牛奶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyuximiniunai",
+                            "price": 15,
+                            "promotion_stock": -1,
+                            "recent_popularity": 6,
+                            "recent_rating": 0.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600586457224",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "中"
+                                }
+                            ],
+                            "stock": 9994,
+                            "virtual_food_id": 915772600,
+                            "weight": 0
+                        },
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976802150,
+                            "is_essential": false,
+                            "item_id": "524571294856",
+                            "name": "鲜芋西米牛奶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyuximiniunai",
+                            "price": 17,
+                            "promotion_stock": -1,
+                            "recent_popularity": 7,
+                            "recent_rating": 4.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600578541704",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大杯"
+                                }
+                            ],
+                            "stock": 9993,
+                            "virtual_food_id": 915772600,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "中",
+                                "大杯"
+                            ]
+                        }
+                    ],
+                    "tips": "2评价 月售13份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915772600
+                },
+                {
+                    "activity": null,
+                    "attributes": [],
+                    "attrs": [
+                        {
+                            "name": "甜度",
+                            "values": [
+                                "微糖",
+                                "半糖",
+                                "无糖",
+                                "标准糖",
+                                "多糖"
+                            ]
+                        },
+                        {
+                            "name": "温度",
+                            "values": [
+                                "常温",
+                                "温",
+                                "热",
+                                "去冰",
+                                "少冰",
+                                "多冰"
+                            ]
+                        }
+                    ],
+                    "brand": null,
+                    "category_id": 545465409,
+                    "cold_box": null,
+                    "description": "",
+                    "image_path": "73e1b816777234ef7bff2215022a2dd8jpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524552326280",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 4,
+                    "name": "鲜芋珍珠牛奶",
+                    "photos": [
+                        "73e1b816777234ef7bff2215022a2dd8jpeg"
+                    ],
+                    "rating": 4.0,
+                    "rating_count": 2,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 2,
+                    "satisfy_rate": 100,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976775351,
+                            "is_essential": false,
+                            "item_id": "524552326280",
+                            "name": "鲜芋珍珠牛奶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyuzhenzhuniunai",
+                            "price": 15,
+                            "promotion_stock": -1,
+                            "recent_popularity": 2,
+                            "recent_rating": 4.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600586400904",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "中杯"
+                                }
+                            ],
+                            "stock": 9996,
+                            "virtual_food_id": 915795085,
+                            "weight": 0
+                        },
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976792882,
+                            "is_essential": false,
+                            "item_id": "524552326280",
+                            "name": "鲜芋珍珠牛奶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyuzhenzhuniunai",
+                            "price": 17,
+                            "promotion_stock": -1,
+                            "recent_popularity": 2,
+                            "recent_rating": 4.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600605485192",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大杯"
+                                }
+                            ],
+                            "stock": 9997,
+                            "virtual_food_id": 915795085,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "中杯",
+                                "大杯"
+                            ]
+                        }
+                    ],
+                    "tips": "2评价 月售4份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915795085
+                },
+                {
+                    "activity": null,
+                    "attributes": [],
+                    "attrs": [
+                        {
+                            "name": "温度",
+                            "values": [
+                                "常温",
+                                "温",
+                                "热",
+                                "去冰",
+                                "少冰",
+                                "多冰"
+                            ]
+                        },
+                        {
+                            "name": "甜度",
+                            "values": [
+                                "微糖",
+                                "半糖",
+                                "无糖",
+                                "标准糖",
+                                "多糖"
+                            ]
+                        }
+                    ],
+                    "brand": null,
+                    "category_id": 545465409,
+                    "cold_box": null,
+                    "description": "",
+                    "image_path": "c6c1acbce2d9387f4e2192a3d3ed1f45jpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524548042888",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 6,
+                    "name": "鲜芋红豆牛奶",
+                    "photos": [
+                        "c6c1acbce2d9387f4e2192a3d3ed1f45jpeg"
+                    ],
+                    "rating": 0,
+                    "rating_count": 0,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 0,
+                    "satisfy_rate": 0,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976792744,
+                            "is_essential": false,
+                            "item_id": "524548042888",
+                            "name": "鲜芋红豆牛奶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyuhongdouniunai",
+                            "price": 15,
+                            "promotion_stock": -1,
+                            "recent_popularity": 1,
+                            "recent_rating": 0.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600605247624",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "中杯"
+                                }
+                            ],
+                            "stock": 9999,
+                            "virtual_food_id": 915799075,
+                            "weight": 0
+                        },
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976787956,
+                            "is_essential": false,
+                            "item_id": "524548042888",
+                            "name": "鲜芋红豆牛奶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyuhongdouniunai",
+                            "price": 17,
+                            "promotion_stock": -1,
+                            "recent_popularity": 5,
+                            "recent_rating": 0.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600600149128",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大杯"
+                                }
+                            ],
+                            "stock": 9995,
+                            "virtual_food_id": 915799075,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "中杯",
+                                "大杯"
+                            ]
+                        }
+                    ],
+                    "tips": "0评价 月售6份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915799075
+                },
+                {
+                    "activity": null,
+                    "attributes": [],
+                    "attrs": [
+                        {
+                            "name": "温度",
+                            "values": [
+                                "常温",
+                                "温",
+                                "热",
+                                "去冰",
+                                "少冰",
+                                "多冰"
+                            ]
+                        },
+                        {
+                            "name": "甜度",
+                            "values": [
+                                "微糖",
+                                "半糖",
+                                "无糖",
+                                "标准糖",
+                                "多糖"
+                            ]
+                        }
+                    ],
+                    "brand": null,
+                    "category_id": 545465409,
+                    "cold_box": null,
+                    "description": "",
+                    "image_path": "966500df8c53a82b54bfa0470b4434d4jpeg",
+                    "is_essential": false,
+                    "is_featured": 0,
+                    "item_id": "524565633160",
+                    "limitation": {},
+                    "min_purchase": 1,
+                    "month_sales": 22,
+                    "name": "鲜芋青稞牛奶",
+                    "photos": [
+                        "966500df8c53a82b54bfa0470b4434d4jpeg"
+                    ],
+                    "rating": 3.5,
+                    "rating_count": 3,
+                    "restaurant_id": 167616232,
+                    "satisfy_count": 2,
+                    "satisfy_rate": 66,
+                    "scheme": null,
+                    "specfoods": [
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976774318,
+                            "is_essential": false,
+                            "item_id": "524565633160",
+                            "name": "鲜芋青稞牛奶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyuqingkeniunai",
+                            "price": 15,
+                            "promotion_stock": -1,
+                            "recent_popularity": 8,
+                            "recent_rating": 4.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600595257480",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "中杯"
+                                }
+                            ],
+                            "stock": 9987,
+                            "virtual_food_id": 915776866,
+                            "weight": 0
+                        },
+                        {
+                            "checkout_mode": 1,
+                            "food_id": 976778549,
+                            "is_essential": false,
+                            "item_id": "524565633160",
+                            "name": "鲜芋青稞牛奶",
+                            "original_price": null,
+                            "packing_fee": 1,
+                            "partial_reduce_activity_id": null,
+                            "pinyin_name": "xianyuqingkeniunai",
+                            "price": 17,
+                            "promotion_stock": -1,
+                            "recent_popularity": 14,
+                            "recent_rating": 3.0,
+                            "restaurant_id": 167616232,
+                            "sku_id": "600590370952",
+                            "sold_out": false,
+                            "specs": [
+                                {
+                                    "name": "规格",
+                                    "value": "大杯"
+                                }
+                            ],
+                            "stock": 9983,
+                            "virtual_food_id": 915776866,
+                            "weight": 0
+                        }
+                    ],
+                    "specifications": [
+                        {
+                            "name": "规格",
+                            "values": [
+                                "中杯",
+                                "大杯"
+                            ]
+                        }
+                    ],
+                    "tips": "3评价 月售22份",
+                    "type": null,
+                    "video": null,
+                    "virtual_food_id": 915776866
+                }
+            ],
+            "global_id": "59236514952",
+            "grey_icon_url": "",
+            "icon_url": "",
+            "id": 545465409,
+            "is_activity": false,
+            "is_selected": false,
+            "name": "CoCo鲜芋系列",
+            "type": 1
+        }
+    ],
+    "rst": {
+        "act_tag": 0,
+        "activities": [
+            {
+                "attribute": "17.0",
+                "description": "新用户下单立减17元(不与其它活动同享)",
+                "icon_color": "70bc46",
+                "icon_name": "首单",
+                "id": 1640551121,
+                "is_exclusive_with_food_activity": true,
+                "name": "新用户立减(不与其他活动共享)",
+                "tips": "新用户下单立减17元(不与其它活动同享)",
+                "type": 103
+            },
+            {
+                "attribute": "{\"24\": {\"1\": 6.0, \"0\": 0}, \"35\": {\"1\": 8.0, \"0\": 0}, \"60\": {\"1\": 13.0, \"0\": 0}}",
+                "description": "满24减6，满35减8，满60减13",
+                "icon_color": "f07373",
+                "icon_name": "满减",
+                "id": 1723729465,
+                "is_exclusive_with_food_activity": true,
+                "name": "满减",
+                "tips": "满24减6，满35减8，满60减13",
+                "type": 102
+            },
+            {
+                "description": "单品定价",
+                "icon_color": "f1884f",
+                "icon_name": "特价",
+                "id": 1715983897,
+                "name": "单品定价",
+                "tips": "单品定价"
+            }
+        ],
+        "address": "北京市朝阳区青年路姚家园113号11幢018室",
+        "albums": [
+            {
+                "count": 1,
+                "cover_image_hash": "c4f694dee3de24722e9c85329edffa59jpeg",
+                "name": "门面",
+                "photos": [
+                    {
+                        "id": 90265690,
+                        "image_hash": "c4f694dee3de24722e9c85329edffa59jpeg",
+                        "type": "FRONT"
+                    }
+                ]
+            },
+            {
+                "count": 1,
+                "cover_image_hash": "76302fbdbf80da5dfa7ee043970a1c1ajpeg",
+                "name": "大堂",
+                "photos": [
+                    {
+                        "id": 90265698,
+                        "image_hash": "76302fbdbf80da5dfa7ee043970a1c1ajpeg",
+                        "type": "HALL"
+                    }
+                ]
+            }
+        ],
+        "authentic_id": 6393878106092132,
+        "business_info": "{}",
+        "delivery_mode": {
+            "border": "FFFFFF",
+            "color": "",
+            "icon_hash": "b9b45d2f6ff0dbeef3a78ef0e4e90abapng",
+            "id": 3,
+            "is_solid": true,
+            "text": "蜂鸟快送",
+            "text_color": "FFFFFF"
+        },
+        "description": "",
+        "distance": 2652,
+        "favored": false,
+        "flavors": [
+            {
+                "id": 240,
+                "name": "奶茶果汁"
+            }
+        ],
+        "float_delivery_fee": 1,
+        "float_minimum_order_amount": 20,
+        "has_story": false,
+        "id": 167616232,
+        "image_path": "../../static/img/coco.jpeg",
+        "is_new": true,
+        "is_premium": false,
+        "is_stock_empty": 0,
+        "is_valid": 1,
+        "latitude": 39.927325,
+        "longitude": 116.51749,
+        "max_applied_quantity_per_order": 1,
+        "name": "CoCo茶饮(青年路店)",
+        "next_business_time": "明天 09:00",
+        "only_use_poi": false,
+        "opening_hours": [
+            "09:00/20:50"
+        ],
+        "order_lead_time": 34,
+        "out_of_range": false,
+        "phone": "15201142572",
+        "piecewise_agent_fee": {
+            "description": "远距离配送费¥1",
+            "extra_fee": -1,
+            "is_extra": true,
+            "no_subsidy_fee": "¥4",
+            "rules": [
+                {
+                    "fee": 1,
+                    "price": 20
+                }
+            ],
+            "tips": "远距离配送费¥1"
+        },
+        "platform": 0,
+        "posters": [],
+        "promotion_info": "",
+        "qualification": {
+            "link": "https://h5.ele.me/shop/certification/#/?restaurant_id=E14017016619833240931"
+        },
+        "rating": 4.4,
+        "rating_count": 207,
+        "recent_order_num": 688,
+        "recommend": {
+            "is_ad": false,
+            "reason": ""
+        },
+        "recommend_reasons": [],
+        "regular_customer_count": 0,
+        "scheme": "eleme://catering?restaurant_id=167616232",
+        "shop_sign": {
+            "brand_story": "",
+            "image_hash": ""
+        },
+        "status": 1,
+        "support_tags": [
+            {
+                "border": "dddddd",
+                "color": "666666",
+                "icon": "4e20966ca2a516de3f02fb9c7fd1bc6dpng",
+                "text": "奶茶果汁",
+                "type": 1
+            },
+            {
+                "border": "dddddd",
+                "color": "333333",
+                "text": "品质联盟"
+            }
+        ],
+        "supports": [
+            {
+                "border": "90dddddd",
+                "description": "该商户食品安全已由国泰产险承担，食品安全有保障",
+                "icon_color": "999999",
+                "icon_name": "保",
+                "id": 7,
+                "name": "食安保",
+                "text_color": "666666",
+                "two_characters_icon_name": "保险"
+            }
+        ],
+        "theme": {
+            "default_color": "2395ff",
+            "header_style": 3,
+            "hongbao_style": 0,
+            "price_color": "ff5339",
+            "third_tab_name": "商家",
+            "vanish_fields": []
+        },
+        "type": 0,
+        "weight": {
+            "basic": 20000,
+            "maximum": 20000,
+            "unit": 20000,
+            "unit_fee": 20000
+        }
+    }
+}

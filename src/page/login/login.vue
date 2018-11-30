@@ -44,6 +44,7 @@
 
 <script>
 import axios from "axios";
+import { mapState } from "vuex";
 
 export default {
   data() {
@@ -67,7 +68,8 @@ export default {
         // return callback(new Error("验证码不能为空"));
       } else {
         // 验证验证码是否正确，(暂时使用静态)
-        if (value === this.code_num) {
+        // if (value === this.code_num) {
+        if (value === '111111') {
           this.codeOjdk = true;
           callback();
         } else {
@@ -94,7 +96,9 @@ export default {
       }
     };
   },
-
+  computed: {
+    ...mapState(["userInfo"])
+  },
   methods: {
     // 获取验证码,发送随机六位数
     getCode() {
@@ -110,9 +114,23 @@ export default {
       // 每次点击登录按钮先清除按钮的style样式
       $("#err_tips").removeAttr("style");
       if (this.phoneOjdk && this.codeOjdk) {
-        console.log("登录成功!!!!");        
+        console.log("登录成功!!!!");
+        this.$axios
+          .get("/static/json/userinfo.json/")
+          .then(res => {
+            this.$store.state.userInfo = res.data;
+          })
+        .catch(err => {
+          console.log(err);
+        });
+        //  console.log(this.$route.query.url)
+         if(this.$route.query.url){
+           this.$router.replace({path: this.$route.query.url});
+         }
+         else{
+           this.$router.replace({name: "profile", params:{ phone: this.form.phone}});
+         }
         // this.$router.push({path: "/profile", query:{ phone: this.form.phone}});
-        this.$router.push({name: "profile", params:{ phone: this.form.phone}});
       } 
       else {
         if (!this.phoneOjdk) {

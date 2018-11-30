@@ -9,6 +9,7 @@ const info = r => require.ensure([], () => r(require('../page/profile/children/i
 const order = r => require.ensure([], () => r(require('../page/order/order')), 'order')
 const login = r => require.ensure([], () => r(require('../page/login/login')), 'login')
 const shop = r => require.ensure([], () => r(require('../page/shop/shop')), 'shop')
+const shoppingcart = r => require.ensure([], () => r(require('../page/cart/shoppingcart')), 'shoppingcart')
 
 
 
@@ -86,6 +87,11 @@ export default [{
       name:'shop',
       path: '/shop',
       component: shop
+    },
+    {
+      name:'shoppingcart',
+      path: '/shoppingcart',
+      component: shoppingcart
     },
     // 测试页面
     {
