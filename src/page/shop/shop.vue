@@ -473,6 +473,7 @@ export default {
       } else {
         // 俩种方式
         // this.$router.push({path: '/login', query:{ url:this.$route.path}});
+
         this.$router.push({ path: "/login?url=" + this.$route.path });
       }
     },
