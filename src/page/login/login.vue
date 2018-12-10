@@ -44,7 +44,7 @@
 
 <script>
 import axios from "axios";
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 
 export default {
   data() {
@@ -97,9 +97,10 @@ export default {
     };
   },
   computed: {
-    ...mapState(["userInfo"])
+    ...mapState(["userInfo","login"])
   },
   methods: {
+    ...mapMutations(["LOGIN"]),
     // 获取验证码,发送随机六位数
     getCode() {
       var code_num = "";
@@ -118,18 +119,21 @@ export default {
         this.$axios
           .get("/static/json/userinfo.json/")
           .then(res => {
-            this.$store.state.userInfo = res.data;
+            // this.$store.state.userInfo = res.data;
+            this.LOGIN(res.data)
+            // console.log(this.userInfo)
+            if(this.$route.query.url){
+              this.$router.replace({path: this.$route.query.url});
+            }
+            else{
+              this.$router.replace({name: "profile", params:{ phone: this.form.phone}});
+            }
           })
         .catch(err => {
           console.log(err);
         });
         //  console.log(this.$route.query.url)
-         if(this.$route.query.url){
-           this.$router.replace({path: this.$route.query.url});
-         }
-         else{
-           this.$router.replace({name: "profile", params:{ phone: this.form.phone}});
-         }
+         
         // this.$router.push({path: "/profile", query:{ phone: this.form.phone}});
       } 
       else {

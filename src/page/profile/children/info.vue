@@ -6,7 +6,7 @@
                 <li class="info_li info_img">
                     <b>头像</b>
                     <span class="info_detail">
-                        <input type="file" accept="image/jpeg,image/jpg,image/png">
+                        <input type="file" accept="image/jpeg,image/jpg,image/png" @change.stop="handleFile" class="imgInput">
                         <div class="info_img">
                             <img :src="userInfo.avatar" alt="" v-if="userInfo">
                         </div>
@@ -52,7 +52,7 @@
 </template>
 <script>
 import headerBar from "../../../components/header/head";
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 
 export default {
   data() {
@@ -65,10 +65,23 @@ export default {
     ...mapState(["userInfo"])
   },
   methods:{
-      logout(){
-          this.$store.state.userInfo = null;
-          this.$router.go(-1);
+    ...mapMutations(["LOGOUT"]),
+    logout(){
+      this.LOGOUT();
+      this.$router.go(-1);
+    },
+    // 将头像显示
+    handleFile: function (e) {
+      let $target = e.target || e.srcElement
+      let file = $target.files[0]
+      var reader = new FileReader()
+      reader.onload = (data) => {
+        let res = data.target || data.srcElement
+        this.userInfo.avatar = res.result
+        this.$store.state.userInfo.avatar = res.result
       }
+      reader.readAsDataURL(file)
+    },
   }
 };
 </script>

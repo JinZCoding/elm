@@ -3,9 +3,9 @@
         <header-bar head-title="我的" goBack="true"></header-bar>
         <section class="cont">
           <section class="profile_number">
-            <router-link :to="userInfo?'/profile/info' : '/login'" class="profile_link">
+            <router-link :to="login?'/profile/info' : '/login'" class="profile_link">
               <!-- 头像 -->
-              <img :src="avatar" alt="" class="privateImage" v-if="userInfo">
+              <img :src="avatar" alt="" class="privateImage" v-if="login">
               <span class="privateImage" v-else>
                 <svg class="privateImage-svg">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#avatar-default"></use>
@@ -33,17 +33,17 @@
           </section>
           <section class="main_info">
             <a href="javascript:;" class="info_items">
-              <span class="main_num" id="wallet" v-if="userInfo"><i>{{parseInt(balance).toFixed(2)}}</i>元</span>
+              <span class="main_num" id="wallet" v-if="login"><i>{{parseInt(balance).toFixed(2)}}</i>元</span>
               <img src="../../images/wallet.svg" alt="" v-else>
               <span>钱包</span>
             </a>
             <a href="javascript:;" class="info_items">
-              <span class="main_num" id="bag" v-if="userInfo"><i>{{count}}</i>个</span>
+              <span class="main_num" id="bag" v-if="login"><i>{{count}}</i>个</span>
               <img src="../../images/red.svg" alt="" v-else>
               <span>红包</span>
             </a>
             <a href="javascript:;" class="info_items">
-              <span class="main_num" id="gold" v-if="userInfo"><i>{{pointNumber}}</i>个</span>
+              <span class="main_num" id="gold" v-if="login"><i>{{pointNumber}}</i>个</span>
               <img src="../../images/gold.svg" alt="" v-else>
               <span>金币</span>
             </a>
@@ -70,7 +70,7 @@
           </section>
           <section class="profile_list">
             <!-- 积分商城 -->
-            <router-link to="order" class="myorder">
+            <router-link to="" class="myorder">
               <aside>
                 <svg fill="rgb(148, 217, 74)">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#point"></use>
@@ -87,7 +87,7 @@
 
             </router-link>
             <!-- 分享 -->
-            <router-link to="order" class="myorder">
+            <router-link to="" class="myorder">
               <aside>
                 <svg fill="#ffc636">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#gift"></use>
@@ -106,7 +106,7 @@
           </section>
           <section class="profile_list">
             <!-- 我的客服 -->
-            <router-link to="order" class="myorder">
+            <router-link to="" class="myorder">
               <aside>
                 <svg fill="#4aa5f0">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#service_1"></use>
@@ -122,7 +122,7 @@
               </div>
             </router-link>
             <!-- 下载饿了么APP -->
-            <router-link to="order" class="myorder">
+            <router-link to="" class="myorder">
               <aside>
                 <svg fill="#3cabff">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#download"></use>
@@ -169,45 +169,29 @@ export default {
     // console.log(this.$route.params.phone)
     // "/static/json/userinfo.json/"+this.$route.query.phone
     //  https://cnodejs.org/api/v1/topics
-
-    if (this.userInfo) {
-      this.username = this.userInfo.username;
-      this.phone = this.userInfo.phone;
-      this.avatar = this.userInfo.avatar;
-      this.balance = this.userInfo.balance;
-      this.count = this.userInfo.gift_amount;
-      this.pointNumber = this.userInfo.point;
-    } else if (this.$route.params.phone) {
-      this.getData();
-    }
+    this.getData();
   },
   components: {
     headerBar,
     footerBar
   },
   computed: {
-    ...mapState(["userInfo"])
+    ...mapState(["userInfo","login"])
   },
   methods: {
     getData() {
-      this.$axios
-        .get("/static/json/userinfo.json/")
-        .then(res => {
-          // this.$store.state.userInfo = res.data;
-          // console.log(res.data);
-          // console.log(this.userInfo)
-          this.userInfo.phone = this.$route.params.phone;
-          this.username = this.userInfo.username;
-          this.phone = this.userInfo.phone;
-          this.avatar = this.userInfo.avatar;
-          this.balance = this.userInfo.balance;
-          this.count = this.userInfo.gift_amount;
-          this.pointNumber = this.userInfo.point;
-          // console.log(res);
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      if(this.userInfo && this.userInfo.user_id){
+        console.log(this.userInfo)
+        this.username = this.userInfo.username || '登录/注册';
+        this.phone = this.userInfo.phone || '登录后享受更多特权';
+        this.avatar = this.userInfo.avatar;
+        this.balance = this.userInfo.balance;
+        this.count = this.userInfo.gift_amount;
+        this.pointNumber = this.userInfo.point;
+      }else{
+        this.username = "登录/注册";
+        this.phone = "登录后享受更多特权";
+      }
     }
   }
 };

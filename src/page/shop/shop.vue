@@ -140,7 +140,7 @@
       <!-- 购物车 -->
       <div class="cart">
         <div class="shopcart">
-          <div class="cart_left nofoods" @click="showCart">
+          <div class="cart_left" @click="showCart" :class="{'nofoods':!cartFood.length,'havefoods':cartFood.length}">
             <div class="cart_icon" v-if="totalNum">{{totalNum}}</div>
           </div>
           <div class="cart_middle foods_pri" @click="showCart">
@@ -153,7 +153,7 @@
             </p>
             <p class="food_deliver middle_font">另需配送费{{deliveryFee}}元</p>
           </div>
-          <a role="button" href="javascript:;" class="cart_right">
+          <a role="button" href="javascript:;" class="cart_right" :class="{'gobuy':(this.minimumOrderAmount - this.originalPrice <= 0)}">
             <span class="total_pri" v-if="!totalPrice">￥{{minimumOrderAmount}}起送</span>
             <span
               v-else-if="totalPrice && minimumOrderAmount - totalPrice > 0"
@@ -344,7 +344,7 @@
 import headerBar from "../../components/header/head";
 import footerBar from "../../components/footer/foot";
 import ratingStar from "../../components/common/ratingStar";
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 
 export default {
   data() {
@@ -410,6 +410,7 @@ export default {
     }
   },
   methods: {
+    ...mapMutations(["ADD_CART","REDUCE_CART","CLEAR_CATR"]),
     // 初始化信息
     initData() {
       this.$axios.get("/static/json/shop.json/").then(res => {
@@ -519,13 +520,6 @@ export default {
         this.originalPrice += num;
       }
       this.totalPrice += num;
-      if (this.minimumOrderAmount - this.originalPrice <= 0) {
-        $(".cart_right").addClass("gobuy");
-      }
-      $(".cart_left").removeClass("nofoods");
-      $(".cart_left").addClass("havefoods");
-
-      // $(".total_pri").text(this.totalPrice)
     },
     //显示购物车内容
     showCart() {
@@ -556,15 +550,9 @@ export default {
           this.cartFood.splice(index, 1);
           // 没有商品，移除样式
           if (this.cartFood.length === 0) {
-            $(".cart_right").removeClass("gobuy");
-            $(".cart_left").addClass("nofoods");
-            $(".cart_left").removeClass("havefoods");
             $(".catr_info").slideToggle(300);
             $(".foodlist_cover").hide();
           }
-        }
-        if (this.minimumOrderAmount - this.originalPrice > 0) {
-          $(".cart_right").removeClass("gobuy");
         }
       } else {
         this.totalNum++;
@@ -585,15 +573,13 @@ export default {
     // 清空购物车
     clear() {
       this.cartFood = [];
-      $(".cart_right").removeClass("gobuy");
-      $(".cart_left").addClass("nofoods");
-      $(".cart_left").removeClass("havefoods");
-      $(".catr_info").slideToggle(300);
-      $(".foodlist_cover").hide();
       this.totalPacking = 0;
       this.totalPrice = 0;
       this.originalPrice = 0;
       this.totalNum = 0;
+      $(".catr_info").slideToggle(300);
+      $(".foodlist_cover").hide();
+      this.CLEAR_CATR();
     },
     // 隐藏遮盖层
     hideCover() {
